@@ -10,6 +10,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
     </head>
     <body>
         <?php
+        caca
         // put your code here
         ?>
     </body>
