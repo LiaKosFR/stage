@@ -14,8 +14,8 @@
 
   <title>Ecole Test</title>
 
-
-
+  <!-- image barre de titre -->
+  <link rel="shortcut icon" href="<?php echo Chemins::IMAGES . 'logo_ecole.jpg';?>" />  
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="<?php echo Chemins::CSS . 'bootstrap.css'?>"/>
   <!-- progress barstle -->

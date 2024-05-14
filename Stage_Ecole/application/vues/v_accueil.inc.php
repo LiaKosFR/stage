@@ -264,6 +264,7 @@
     <div class="container-fluid position-relative">
       <div class="row h-100">
         <div id="map" class="h-100 w-100 ">
+            
         </div>
         <div class="container">
           <div class="admission_container position-absolute">
