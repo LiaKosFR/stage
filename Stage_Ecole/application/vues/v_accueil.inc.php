@@ -17,13 +17,13 @@
               <span>
                 Contact
               </span>
-              <img src="images/right-arrow.png" alt="">
+                <img src="<?php echo Chemins::IMAGES . 'right-arrow.png'?>" alt="">
             </a>
           </div>
         </div>
         <div class="hero_img-container">
           <div>
-            <img src="images/hero.png" alt="" class="img-fluid">
+            <img src="<?php echo Chemins::IMAGES .'hero.png'?>"alt="" class="img-fluid">
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@
         passages of Lorem Ipsum available, but the majority h
       </p>
       <div class="about_img-box ">
-        <img src="images/kids.jpg" alt="" class="img-fluid w-100">
+        <img src="<?php echo Chemins::IMAGES .'kids.jpg'?>" alt="" class="img-fluid w-100">
       </div>
       <div class="d-flex justify-content-center mt-5">
         <a href="" class="call_to-btn  ">
@@ -50,7 +50,7 @@
           <span>
             Read More
           </span>
-          <img src="images/right-arrow.png" alt="">
+            <img src="<?php echo Chemins::IMAGES .'right-arrow.png'?>" alt="">
         </a>
       </div>
     </div>
@@ -71,20 +71,20 @@
       <div class="teacher_container layout_padding2">
         <div class="card-deck">
           <div class="card">
-            <img class="card-img-top" src="images/teacher-1.jpg" alt="Card image cap">
+            <img class="card-img-top" src="<?php echo Chemins::IMAGES .'teacher-1.jpg'?>" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Den Mark</h5>
             </div>
           </div>
           <div class="card">
-            <img class="card-img-top" src="images/teacher-2.jpg" alt="Card image cap">
+            <img class="card-img-top" src="<?php echo Chemins::IMAGES .'teacher-2.jpg'?>" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Leena jorj</h5>
             </div>
 
           </div>
           <div class="card">
-            <img class="card-img-top" src="images/teacher-3.jpg" alt="Card image cap">
+            <img class="card-img-top" src="<?php echo Chemins::IMAGES .'teacher-3.jpg'?>" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Magi Den</h5>
 
@@ -93,7 +93,7 @@
           </div>
 
           <div class="card">
-            <img class="card-img-top" src="images/teacher-4.jpg" alt="Card image cap">
+            <img class="card-img-top" src="<?php echo Chemins::IMAGES .'teacher-4.jpg'?>" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">jonson mark</h5>
 
@@ -110,7 +110,7 @@
           <span>
             See More
           </span>
-          <img src="images/right-arrow.png" alt="">
+          <img src="<?php echo Chemins::IMAGES .'right-arrow.png'?>" alt="">
         </a>
       </div>
     </div>
@@ -133,17 +133,17 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="vehicle_img-box ">
-                <img src="images/bus.png" alt="" class="img-fluid w-100">
+                <img src="<?php echo Chemins::IMAGES .'bus.png'?>" alt="" class="img-fluid w-100">
               </div>
             </div>
             <div class="carousel-item">
               <div class="vehicle_img-box ">
-                <img src="images/bus.png" alt="" class="img-fluid w-100">
+                <img src="<?php echo Chemins::IMAGES .'bus.png'?>" alt="" class="img-fluid w-100">
               </div>
             </div>
             <div class="carousel-item">
               <div class="vehicle_img-box ">
-                <img src="images/bus.png" alt="" class="img-fluid w-100">
+                <img src="<?php echo Chemins::IMAGES .'bus.png'?>" alt="" class="img-fluid w-100">
               </div>
             </div>
           </div>
@@ -177,7 +177,7 @@
         <div class="client_container d-flex flex-column">
           <div class="client_detail d-flex align-items-center">
             <div class="client_img-box ">
-              <img src="images/student.png" alt="">
+              <img src="<?php echo Chemins::IMAGES .'student.png'?>" alt="">
             </div>
             <div class="client_detail-box">
               <h4>
@@ -268,7 +268,7 @@
         <div class="container">
           <div class="admission_container position-absolute">
             <div class="admission_img-box">
-              <img src="images/kidss.jpg" alt="">
+              <img src="<?php echo Chemins::IMAGES .'kidss.jpg'?>" alt="">
             </div>
             <div class="admission_detail">
               <h3>

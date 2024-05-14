@@ -10,7 +10,7 @@
         const CONTROLEURS = "application/controleurs/";
 
         //Chemin public
-        const IMAGES = "public/img/";
+        const IMAGES = "public/images/";
         const IMAGES_PRODUITS = "public/images/produits/";
         const JS = "public/js/";
         const CSS = "public/css/";
