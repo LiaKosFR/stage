@@ -1,35 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Ecole Test</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-    <!-- Icon -->
-    <link href="<?php echo Chemins::IMAGES . 'icone.ico';?>" rel="icon">
+  <title>Ecole Test</title>
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="<?php echo Chemins::LIBS .'animate/animate.min.css'?>" rel="stylesheet">
-    <link href="<?php echo Chemins::LIBS . 'owlcarousel/assets/owl.carousel.min.css'?>" rel="stylesheet">
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="<?php echo Chemins::CSS . 'bootstrap.css'?>"/>
+  <!-- progress barstle -->
+  <link rel="stylesheet" href="<?php echo Chemins::CSS . 'css-circular-prog-bar.css' ?>">
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- font wesome stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Custom styles for this template -->
+  <link href="<?php echo Chemins::CSS .'style.css' ?>" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="<?php echo Chemins::CSS . 'responsive.css' ?>" rel="stylesheet" />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="<?php echo Chemins::CSS . 'boostrap.min.css'?>" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="<?php echo Chemins::CSS . 'style.css'?>" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="<?php echo Chemins::CSS .'css-circular-prog-bar.css'?>">
+
+
 </head>
-<body>
-
-
