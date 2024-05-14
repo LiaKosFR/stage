@@ -1,38 +1,35 @@
 <!DOCTYPE html>
-<!-- TITRE ET MENUS -->
-<html lang="fr">
+<html lang="en">
 
-    <body>
-        <header>
+<head>
+    <meta charset="utf-8">
+    <title>Ecole Test</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-            <!-- Images En-tête -->
-            <a href="index.php"><img src="<?php echo Chemins::IMAGES . 'ziknco.jpg'; ?>"" alt="ZiK'nCo" title="Revenir à l'accueil"/></a>
+    <!-- Icon -->
+    <link href="<?php echo Chemins::IMAGES . 'icone.ico';?>" rel="icon">
 
-            <h1>Bienvenue sur LiaKo's Shop !</h1>
-            <nav>
-                <div class="dropdown">
-                    <button class="dropbtn">Menu</button>
-                    <div class="dropdown-content">
-                        <a href="index.php">Accueil</a>
-                        <a href="#">Voir le panier</a>
-                        <a href="#">Nous contacter</a>
-                    </div>
-                </div>
-            </nav>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-        </header>
-        <!DOCTYPE html>
-    <html lang="fr">
-        <head>        
-            <title>LiaKos Shop</title>
-            <meta http-equiv="Content-Language" content="fr">
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-            <link href="<?php echo Chemins::STYLES . 'style.css'; ?>" rel="stylesheet" type="text/css">
-            <link href="<?php echo Chemins::STYLES . 'styleform.css'; ?>" rel="stylesheet" type="text/css">
-            <script src="<?php echo Chemins::STYLES . 'javastyle.js' ?>"></script>
-            <link rel="shortcut icon" type="image/jpeg" href="<?php echo Chemins::IMAGES . 'ziknco_titre.jpg'; ?>">
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        </head>
-        <body>
+    <!-- Libraries Stylesheet -->
+    <link href="<?php echo Chemins::LIBS .'animate/animate.min.css'?>" rel="stylesheet">
+    <link href="<?php echo Chemins::LIBS . 'owlcarousel/assets/owl.carousel.min.css'?>" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="<?php echo Chemins::CSS . 'boostrap.min.css'?>" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="<?php echo Chemins::CSS . 'style.css'?>" rel="stylesheet">
+</head>
+<body>
+
 
