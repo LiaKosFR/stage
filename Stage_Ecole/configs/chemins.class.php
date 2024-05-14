@@ -17,7 +17,7 @@
 
         //Autres Chemin
         const CONFIGS = "configs/";
-        const LIBS = "libs/";
+        const LIBS = "public/lib/";
     }
 
 ?>
