@@ -311,7 +311,7 @@
       </h2>
       <p class="landing_detail text-center">
         There are many variations of passages of Lorem Ipsum available, but the majority There are many variations of
-        passages of Lorem Ipsum available, but the majority h
+        passages of Lorem Ipsum available, but the majority h q
 
       </p>
     </div>
