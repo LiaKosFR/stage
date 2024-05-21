@@ -5,10 +5,10 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" alt="">
+          <a class="navbar-brand" href="index.php">
+            <img  class="image_nav" src=" <?php echo Chemins::IMAGES . 'logo_ecole.jpg' ?> " alt="">
             <span>
-              Adward
+              Jamondeyra
             </span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -20,22 +20,22 @@
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html"> Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.php"> Accueil <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                  <a class="nav-link" href="about.html"> About </a>
+                  <a class="nav-link" href="#About">À propos</a>
                 </li>
 
                 <li class="nav-item ">
-                  <a class="nav-link" href="teacher.html"> Teacher </a>
+                  <a class="nav-link" href="#Teacher"> Professeur </a>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="vehicle.html"> vehicle </a>
+                  <a class="nav-link" href="#vehicule"> vehicule </a>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
+                  <a class="nav-link" href="#ContactNow">Nous Contacter</a>
                 </li>
 
               </ul>
