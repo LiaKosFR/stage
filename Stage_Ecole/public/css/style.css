@@ -2,7 +2,7 @@ body {
   font-family: 'Poppins', sans-serif;
 
   color: #48494a;
-  background-image: url(../images/body-bg.jpg);
+  background-image: url(../images/fond_logo.png);
 }
 
 .layout_padding {
@@ -31,7 +31,7 @@ body {
   border-radius: 10px;
   font-size: 15px;
   text-transform: uppercase;
-  background-color: #fec913;
+  background-color: #8367cd;
   border: 1px solid transparent;
   color: #fff;
   transition: all 0.3s ease 0s;
@@ -61,7 +61,7 @@ body {
 }
 
 .main-heading {
-  color: #082465;
+  color: #8764c8;
   font-weight: bold;
   text-align: center;
 }
@@ -80,7 +80,7 @@ nav.navbar.navbar-expand-lg {
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
   padding: 10px 20px;
   color: #2d2c2c;
-  font-size: 15px;
+  font-size: 14px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -115,12 +115,13 @@ a:focus {
   content: "";
   position: absolute;
   width: 48%;
-  height: 100%;
-  background: url(../images/hero-bg.png);
+  height: 80%;
+  background: url(../images/hero-bg2.png);
   background-size: cover;
   background-position: right bottom;
   background-repeat: no-repeat;
   z-index: -1;
+  border-radius:65% 35% 100% 0% / 0% 63% 37% 100%   ;
 }
 
 .top_container.sub_pages::before {
@@ -181,6 +182,7 @@ a:focus {
 /*end header section*/
 
 /* hero section */
+
 .hero-container {
   display: flex;
   padding-top: 50px;
@@ -189,6 +191,7 @@ a:focus {
 
 .hero_detail-box {
   width: 45%;
+  
 }
 
 .hero_img-container {
@@ -196,14 +199,19 @@ a:focus {
 }
 
 .hero_detail-box {
-  color: #fefeff;
+  color: #fefefe;
 }
 
 .hero_detail-box h1 {
+    
   text-transform: uppercase;
   font-size: 50px;
-  color: #fec913;
+  color: #8367cd;
   font-weight: bold;
+  
+}
+.logo_presentation{
+    width: 60%;
 }
 
 
@@ -271,7 +279,7 @@ a:focus {
 
 /* client section */
 .client_section {
-  background-image: url(../images/shape-1.png);
+  background-image: url(../images/shape21.jpg);
   background-repeat: no-repeat;
 
   background-position: right;
@@ -309,18 +317,21 @@ a:focus {
 }
 
 
-
-
 /* end client section */
 
 
 /* contact section */
 .contact_section {
-  background-image: url(../images/shape-2.png);
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/hero.png);
   background-repeat: no-repeat;
-  background-size: 14%;
-  background-position: left center;
+  background-size: 25%;
+  padding-left: 5px;
+  border-radius: 0% 100% 100% 0% / 0% 47% 52% 43%;
+  
 }
+
 
 .contact-form {
   padding: 25px;
