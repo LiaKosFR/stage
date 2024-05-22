@@ -5,8 +5,8 @@ ob_start();
 
 require_once 'configs/chemins.class.php';
 
-//require_once Chemins::CONFIGS.'mysql_config.class.php';
-//require_once Chemins::CONFIGS.'variables_globales.class.php';
+require_once Chemins::CONFIGS.'mysql_config.class.php';
+require_once Chemins::CONFIGS.'variables_globales.class.php';
 require Chemins::VUES_PERMANENTES.'v_entete.inc.php';
 require Chemins::VUES_PERMANENTES.'v_menu.inc.php';
 

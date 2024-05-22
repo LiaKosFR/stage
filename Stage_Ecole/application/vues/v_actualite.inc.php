@@ -1,6 +1,6 @@
 <section>
     <?php
-    foreach (VariablesGlobales::$lesProduits as $unProduit) {
+    foreach (VariablesGlobales::$lesActualites as $uneActualite) {
         ?> 
         <article>
             <img src="<?php echo Chemins::IMAGES_PRODUITS ?>/<?php echo $unProduit->libelle; ?>/<?php echo $unProduit->image; ?>" alt="photo" />
