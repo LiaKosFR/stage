@@ -40,6 +40,12 @@ class GestionProduit{
         GestionBoutique::$pdoStResults->bindValue('idUtilisateur', $idUtilisateur);
         GestionBoutique::$pdoStResults->execute();
     }
+    public static function getLesActualite(){
+        GestionBoutique::seConnecter();
+        GestionBoutique::$requete = "SELECT * FROM actualite";
+        GestionBoutique::$pdoStResults = GestionBoutique::$pdoCnxBase->prepare(GestionBoutique::$requete);
+        GestionBoutique::$pdoStResults->execute();
+    }
     
    
     
