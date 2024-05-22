@@ -10,6 +10,10 @@ require_once 'configs/chemins.class.php';
 require Chemins::VUES_PERMANENTES.'v_entete.inc.php';
 require Chemins::VUES_PERMANENTES.'v_menu.inc.php';
 
+require_once Chemins::CONTROLEURS . 'ControleurActualite.class.php';
+$controleurActualite = new ControleurActualite();
+$controleurActualite->afficher();
+
 
 require_once Chemins::VUES. 'v_accueil.inc.php';
 

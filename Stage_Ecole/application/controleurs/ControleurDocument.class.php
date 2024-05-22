@@ -1,6 +1,6 @@
 <?php
 
-class ControleurCategories {
+class ControleurDocument {
 
     public function __construct() {
         // si on séparait les modèles, le constructeur donnerait son chemin

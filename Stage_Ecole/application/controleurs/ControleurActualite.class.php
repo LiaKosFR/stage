@@ -1,11 +1,10 @@
 <?php
-require Chemins::MODELES.'gestion_produit.class.php';
-class ControleurProduits {
+require Chemins::MODELES.'gestion_actualite.class.php';
+class ControleurActualite {
     
     public function afficher() {
-        VariablesGlobales::$libelleCategorie = $_REQUEST['categorie'];
-        VariablesGlobales::$lesProduits = GestionProduit::getLesProduitsByCategorie($_REQUEST['categorie']);
-        require Chemins::VUES . 'v_produits.inc.php';
+        VariablesGlobales::$lesActualites = GestionBoutique::getLesTuplesByTable('actualite');
+        require Chemins::VUES . 'v_actualite.inc.php';
         
     }
     
