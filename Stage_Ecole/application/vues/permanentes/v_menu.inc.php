@@ -39,7 +39,7 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="">Se Connecter</a>
+                    <a class="nav-link" href="index.php?controleur=Admin&action=afficherIndex">Se Connecter</a>
                 </li>
 
               </ul>
