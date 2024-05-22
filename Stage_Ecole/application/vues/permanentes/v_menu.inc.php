@@ -37,6 +37,10 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#ContactNow">Nous Contacter</a>
                 </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="">Se Connecter</a>
+                </li>
 
               </ul>
               <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">

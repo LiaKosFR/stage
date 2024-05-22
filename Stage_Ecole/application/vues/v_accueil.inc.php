@@ -6,7 +6,7 @@
                 l'école 
             </h3>
             <h1 class="school">
-                <img class="logo_presentation"src="<?php echo Chemins::IMAGES . 'logo_ecole_sansfond4.png' ?>" alt="alt"/>
+                <img class="logo_presentation" src="<?php echo Chemins::IMAGES . 'logo_ecole_sansfond4.png' ?>" alt="alt"/>
             </h1>
             <p>
                 Ecole maternelle et élémentaire Bilingue dans la ville de Pontoise
