@@ -28,6 +28,8 @@
   <link href="<?php echo Chemins::CSS .'style.css' ?>" rel="stylesheet" />
   <!-- responsive style -->
   <link href="<?php echo Chemins::CSS . 'responsive.css' ?>" rel="stylesheet" />
+  
+  <link href="<?php echo Chemins::CSS . "styleform.css"; ?>" rel="stylesheet" type="text/css">
 
 
 

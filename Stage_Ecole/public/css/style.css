@@ -70,6 +70,7 @@ body {
 
 .header_section {
   padding-top: 10px;
+  
 }
 
 nav.navbar.navbar-expand-lg {
@@ -336,6 +337,7 @@ a:focus {
 .contact-form {
   padding: 25px;
   border-radius: 20px;
+  margin-left: 88px;
 }
 
 .contact-form input {

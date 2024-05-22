@@ -8,22 +8,27 @@
         }
     </style>
     
-<section>
-    <div class="titre">
-        Administration du site (Accès réservé)
+<section class="sectionConnexionAdmin">
+
+    <div class="connexion_container" id="connexion_container">
+        <div class="form-connexion_container sign-in">
+            <form method="post" action="index.php?controleur=Admin&action=verifierConnexion">
+                <legend>Identification</legend>
+                <div class="input">
+                    <label for="login">Login :</label> <input type="text" name="login" " /> <br/>
+                    <label for="passe">Mot de passe :</label><input type="password" name="passe"  />
+                </div>
+                <br/>
+                <div class="connexion_auto">
+                    <label id="lblConnexionAuto" for="connexion_auto"> Connexion automatique : </label><br/>
+                    <input type="checkbox" name="connexion_auto" id="connexion_auto" />
+                </div>
+                <div class="input">
+                    <input id="connexion" type="submit" value="Connexion" />
+                </div>
+            </form>
+        </div>
     </div>
-    <form method="post" action="index.php?controleur=admin&action=verifierConnexion" id="loginForm">
-        <fieldset>
-            <legend>Identification</legend>
-            <label for="login">Votre login :</label>
-            <input type="text" name="login" id="login" required/><br/>
-            <label for="passe">Votre mot de passe :</label>
-            <input type="password" name="passe" id="passe" required/><br/>
-            <input type="checkbox" name="connexion_auto" id="connexion_auto"/>
-            <label for="connexion_auto" class="enligne"> Connexion automatique </label><br/>
-            <input type="submit" value="Connexion" id="connexionBtn" class="disabled"/>
-        </fieldset>
-    </form>
 </section>
 
 <script>

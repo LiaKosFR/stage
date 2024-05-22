@@ -44,7 +44,7 @@ class GestionBoutique {
 
      public static function isAdminOK($login, $passe) {
         self::seConnecter();
-        self::$requete = "SELECT * FROM utilisateur where login=:login and passe=:passe";
+        self::$requete = "SELECT * FROM utilisateur where Mail = :login and mdp = :passe";
         self::$pdoStResults = self::$pdoCnxBase->prepare(self::$requete);
         self::$pdoStResults->bindValue('login', $login);
         self::$pdoStResults->bindValue('passe', sha1($passe));

@@ -11,7 +11,7 @@
 
         //Chemin public
         const IMAGES = "public/images/"; 
-        const IMAGES_PRODUITS = "public/images/produits/";
+        const IMAGES_ACTUALITES = "public/images/image_actualite/";
         const JS = "public/js/";
         const CSS = "public/css/";
 
