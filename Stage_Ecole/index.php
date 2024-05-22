@@ -12,8 +12,10 @@ require Chemins::VUES_PERMANENTES.'v_menu.inc.php';
 
 
 
+
 if (!isset($_REQUEST['controleur'])) {
     require_once Chemins::CONTROLEURS . 'ControleurActualite.class.php';
+    require_once Chemins::VUES. 'v_accueil.inc.php';
     $controleurActualite = new ControleurActualite();
     $controleurActualite->afficher();
 } else {
@@ -28,7 +30,6 @@ if (!isset($_REQUEST['controleur'])) {
     $objetControleur->$action(); 
 }
 
-require_once Chemins::VUES. 'v_accueil.inc.php';
 
 require Chemins::VUES_PERMANENTES.'v_pied.inc.php';
 ?>
