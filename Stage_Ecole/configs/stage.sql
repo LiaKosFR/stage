@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 16 mai 2024 à 01:36
+-- Généré le : mer. 22 mai 2024 à 16:50
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -33,6 +33,7 @@ CREATE TABLE IF NOT EXISTS `actualite` (
   `Titre` varchar(50) DEFAULT NULL,
   `Description` varchar(1000) DEFAULT NULL,
   `dates` date DEFAULT NULL,
+  `image` varchar(50) NOT NULL,
   `idUtilisateur` int NOT NULL,
   PRIMARY KEY (`idActualite`),
   KEY `idUtilisateur` (`idUtilisateur`)
@@ -61,14 +62,22 @@ CREATE TABLE IF NOT EXISTS `document` (
 
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
-  `idUtilisateur` int NOT NULL,
+  `idUtilisateur` int NOT NULL AUTO_INCREMENT,
   `Nom` varchar(50) DEFAULT NULL,
   `Prenom` varchar(50) DEFAULT NULL,
+  `mdp` varchar(500) NOT NULL,
   `Mail` varchar(50) DEFAULT NULL,
-  `Admin` tinyint(1) DEFAULT NULL,
-  `SuperAdmin` tinyint(1) DEFAULT NULL,
+  `isAdmin` tinyint(1) NOT NULL DEFAULT '0',
+  `SuperAdmin` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idUtilisateur`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`idUtilisateur`, `Nom`, `Prenom`, `mdp`, `Mail`, `isAdmin`, `SuperAdmin`) VALUES
+(1, 'tannou', 'rewann', '1e009dc9a7c617b77d4d5b5181b7d20de4c7da30', 'rewann.tannou@gmail.com', 1, 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
