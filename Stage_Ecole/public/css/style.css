@@ -450,3 +450,118 @@ a:focus {
 }
 
 /* end footer section*/
+
+/* Article section*/
+
+.article_actu {
+  display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.article_actu article{
+     background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.article_actu article:hover {
+    transform: translateY(-10px);
+}
+
+/* Image styles */
+.article_actu img {
+    width: 400px; /* Increased width for larger image */
+    height: auto;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.article_actu aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+
+/* Title styles */
+.article_actu h1 {
+    font-size: 2em; /* Larger font size for title */
+    margin: 0;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Date styles */
+.article_actu p {
+   font-size: 1.2em; /* Larger font size for date */
+    color: #777;
+    margin: 5px 0 15px; /* Adjusted margins */
+}
+
+/* Description styles */
+.article_actu h3 {
+    font-size: 1.5em; /* Larger font size for description */
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 60px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+     max-width: 70%; /* Ajustez cette valeur pour agrandir ou réduire la taille maximale de l'image */
+    max-height: 70%; /* Ajustez cette valeur pour agrandir ou réduire la taille maximale de l'image */
+}
+
+.modal-content, .close {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* end Article section*/

@@ -27,7 +27,7 @@
                 </li>
 
                 <li class="nav-item ">
-                  <a class="nav-link" href="#Teacher"> Professeur </a>
+                  <a class="nav-link" href="index.php?controleur=Actualite&action=afficherActualite"> Actualités </a>
                 </li>
 
                 <li class="nav-item">

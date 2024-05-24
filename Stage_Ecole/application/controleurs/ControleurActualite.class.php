@@ -8,9 +8,9 @@ class ControleurActualite {
         
     }
     
-    public function afficherProduits() {
-        VariablesGlobales::$lesProduits = GestionProduit::getlesProduitsWithCategorie();
-        require Chemins::VUES . 'v_produits.inc.php';
+    public function afficherActualite() {
+        VariablesGlobales::$lesActualites = GestionBoutique::getLesTuplesByTable('actualite');
+        require Chemins::VUES . 'v_actualite.inc.php';
         }
     
     public function __construct() {
