@@ -1,9 +1,16 @@
 .admin{
     color: #CAC0B3;
 }
+.titre{
+    width: 1000px;
+    font-size: 25pt;    
+    margin-left: 300px;
+    padding-bottom: 25px;
+}
 .indexAdmin{
     margin-top: 50px;
-    height: 200px;
+    height: auto;
+    width: auto;
     display: grid;
     place-items: center;
 }
@@ -109,8 +116,14 @@ form {
     border: solid 1px #ff595a;
     border-radius: 30px;
 }
-.linkAdmin{
-    padding: 5px;
+
+.produit{
+    border: 1px solid #ff595a ;
+    box-shadow: 5px 5px 5px 1px rgba(255, 89, 90, 0.5);
+    border-radius: 30px;
+    padding: 10px;
+    margin-top: 20px;
+    height: 500px;
 }
 
 
