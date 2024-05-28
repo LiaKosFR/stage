@@ -2,7 +2,7 @@
 
 require_once 'gestion_boutique.class.php';
 
-class GestionProduit{
+class GestionActualite{
     
  // <editor-fold defaultstate="collapsed" desc="Méthodes statiques">
  
@@ -10,26 +10,27 @@ class GestionProduit{
         return GestionBoutique::getNbTupleByTable('actualite');
     }
     
-    public static function ajouter($Titre,$descriptionActualite,$dates,$idUtilisateur) {
+    public static function ajouter($Titre,$descriptionActualite,$dates,$image,$privacy) {
         GestionBoutique::seConnecter();
-        GestionBoutique::$requete = "insert into actualite(Titre,description,dates,idUtilisateur) values(:Titre ,:description, :dates, :idUtilisateur) ";
+        GestionBoutique::$requete = "insert into actualite(Titre,description,dates,image,privacy) values(:Titre ,:description, :dates,:image, :privacy) ";
         GestionBoutique::$pdoStResults = GestionBoutique::$pdoCnxBase->prepare(GestionBoutique::$requete);
-        GestionBoutique::$pdoStResults->bindValue('Titre', $nomProduit);
+        GestionBoutique::$pdoStResults->bindValue('Titre', $Titre);
         GestionBoutique::$pdoStResults->bindValue('description', $descriptionActualite);
         GestionBoutique::$pdoStResults->bindValue('dates', $dates);
-        GestionBoutique::$pdoStResults->bindValue('idUtilisateur', $idUtilisateur);
+        GestionBoutique::$pdoStResults->bindValue('image', $image);
+        GestionBoutique::$pdoStResults->bindValue('privacy', $privacy);
         GestionBoutique::$pdoStResults->execute();
     }
     
     public static function supprimerById($idActualite) {
         GestionBoutique::seConnecter();
-        GestionBoutique::$requete = "Delete FROM actualite WHERE id = :id ";
+        GestionBoutique::$requete = "Delete FROM actualite WHERE idActualite = :id ";
         GestionBoutique::$pdoStResults = GestionBoutique::$pdoCnxBase->prepare(GestionBoutique::$requete);
         GestionBoutique::$pdoStResults->bindValue('id', $idActualite);
         GestionBoutique::$pdoStResults->execute();
     }
     
-    public static function modifierActualiter($idProduitAChanger,$Titre,$descriptionActualite,$dates,$idUtilisateur) {
+    public static function modifierActualite($idProduitAChanger,$Titre,$descriptionActualite,$dates,$idUtilisateur) {
         GestionBoutique::seConnecter();
         GestionBoutique::$requete = "update actualite set Titre = :Titre , description = :description , dates = :dates , idUtilisateur = :idUtilisateur WHERE id = :id";
         GestionBoutique::$pdoStResults = GestionBoutique::$pdoCnxBase->prepare(GestionBoutique::$requete);
@@ -40,7 +41,7 @@ class GestionProduit{
         GestionBoutique::$pdoStResults->bindValue('idUtilisateur', $idUtilisateur);
         GestionBoutique::$pdoStResults->execute();
     }
-    public static function getLesActualite(){
+    public static function getLesActualites(){
         GestionBoutique::getLesTuplesByTable("actualite");
     }
     

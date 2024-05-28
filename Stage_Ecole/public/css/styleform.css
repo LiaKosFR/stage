@@ -118,12 +118,18 @@ form {
 }
 
 .produit{
-    border: 1px solid #ff595a ;
-    box-shadow: 5px 5px 5px 1px rgba(255, 89, 90, 0.5);
+    border: 1px solid rgba(60,192,217, 0.5) ;
+    box-shadow: 5px 5px 5px 1px rgba(60	,192,217, 0.5);
     border-radius: 30px;
     padding: 10px;
+    padding-left: 10px;
     margin-top: 20px;
     height: 500px;
+}
+.produit h2{
+    text-align: center;
+    padding-bottom: 15px;
+    text-decoration:underline;
 }
 
 
