@@ -6,7 +6,7 @@ body {
 }
 
 .layout_padding {
-  padding: 75px 0;
+  padding: 80px 0;
 }
 
 .layout_padding2 {
@@ -64,6 +64,8 @@ body {
   color: #8764c8;
   font-weight: bold;
   text-align: center;
+      margin-bottom: 20px; /* Espace en bas du titre */
+    padding: 10px; /* Ajouter un peu de padding */
 }
 
 /*header section*/
@@ -218,13 +220,20 @@ a:focus {
 
 .hero_detail-box p {
   margin-top: 30px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 
 /* end hero section */
 
 /* about section */
+
+#containerAbout, text-center{
+        line-height: 2.5; /* Espace entre les lignes, valeur de 1.6 fois la hauteur de la ligne de base */
+        background: #fff;
+
+}
+
 .about_img-box {
   width: 65%;
   margin: 40px auto;
@@ -232,18 +241,6 @@ a:focus {
 
 /* about section */
 
-/* teacher container */
-.teacher_section .card {
-  border: none;
-  background-color: transparent;
-}
-
-.teacher_section .card-title {
-  text-align: center;
-  color: #48494a;
-}
-
-/* end teacher container */
 
 /* vehicle section */
 .vehicle_img-box {
@@ -265,6 +262,37 @@ a:focus {
   background-size: 10px;
   background-position: center;
 }
+
+/* Centrer le texte et définir des marges pour le p */
+.text-centre, .text-cantine, .text-garderie {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+/* Assurer que les images ont la même hauteur et largeur */
+.vehicle_img-box img {
+    width: 100%;
+    height: 500px; /* Définir une hauteur fixe */
+    object-fit: cover; /* Pour que l'image couvre tout le conteneur sans déformation */
+}
+
+/* Pour le conteneur de l'image */
+.vehicle_img-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Pour le conteneur de la légende */
+.vehicle_img-box p {
+    margin: 0;
+    min-height: 80px; /* Ajuster cette valeur selon vos besoins */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;}
+
 
 .vehicle_section .carousel-control-prev-icon {
   background-image: url(../images/prev.png);

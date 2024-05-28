@@ -23,7 +23,7 @@
                   <a class="nav-link" href="index.php"> Accueil <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                  <a class="nav-link" href="#About">À propos</a>
+                  <a class="nav-link" href="index.php#APropos">À propos</a>
                 </li>
 
                 <li class="nav-item ">
@@ -31,11 +31,11 @@
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="#vehicule"> vehicule </a>
+                  <a class="nav-link" href="index.php#Services"> Services </a>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="#ContactNow">Nous Contacter</a>
+                  <a class="nav-link" href="index.php#ContactNow">Nous Contacter</a>
                 </li>
                 
                 <li class="nav-item">

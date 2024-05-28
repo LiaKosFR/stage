@@ -32,15 +32,19 @@
 
 <!-- about section -->
 <section class="about_section layout_padding">
-    <div class="container">
-        <div id="About">
+    <div class="container" id="containerAbout">
+        <div id="APropos">
             <h2 class="main-heading ">
-                About School
+                À Propos 
             </h2>
         </div>
         <p class="text-center">
-            There are many variations of passages of Lorem Ipsum available, but the majority hThere are many variations of
-            passages of Lorem Ipsum available, but the majority h
+            Située entre Pontoise et Ennery au sein du parc du château de l'Hermitage l'Ecole primaire Bilingue Jamondeyra accueille vos enfants de la maternelle au CM2.
+          Les enfants seront accueillis dans un cadre bienveillant. Notre Pédagogie est tournée vers les besoins de votre enfant avec des classes à petit Effectif, des objectifs individualisés , un rythme de vie respecté.
+        Les enfants bénéficient de cours d'anglais journalier (30 min pour les Maternelles et 1h30 pour les élémentaires) prodigués par une enseignante spécialisée.
+        Des initiations par des intervenants extérieurs (Espagnol ,Pâtisserie , chants , potager ...) sont proposées au cours de l'année .
+        Apprendre à être critique sur les informations trouvées sur internet et les réseaux sociaux afin de prévenir des dangers.
+        Bienveillance , Adaptation , Autonomie ,Encouragements sont les maitres mots de notre pédagogie afin de permettre aux enfants de devenir des citoyens du monde de demain épanouis .
         </p>
         <div class="about_img-box ">
             <img src="<?php echo Chemins::IMAGES . 'kids.jpg' ?>" alt="" class="img-fluid w-100">
@@ -48,89 +52,44 @@
 
     </div>
 </section>
-
-
 <!-- about section -->
 
-<!-- teacher section -->
-<section class="teacher_section layout_padding-bottom">
-    <div class="container">
-        <div id="Teacher">
-            <h2 class="main-heading ">
-                Our Teachers
-            </h2>
-        </div>
-        <p class="text-center">
-            Ipsum available, but the majority h
-        </p>
-        <div class="teacher_container layout_padding2">
-            <div class="card-deck">
-                <div class="card">
-                    <img class="card-img-top" src="<?php echo Chemins::IMAGES . 'teacher-1.jpg' ?>" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Den Mark</h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="<?php echo Chemins::IMAGES . 'teacher-2.jpg' ?>" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Leena jorj</h5>
-                    </div>
 
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="<?php echo Chemins::IMAGES . 'teacher-3.jpg' ?>" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Magi Den</h5>
 
-                    </div>
-
-                </div>
-
-                <div class="card">
-                    <img class="card-img-top" src="<?php echo Chemins::IMAGES . 'teacher-4.jpg' ?>" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">jonson mark</h5>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- teacher section -->
-
-<!-- vehicle section -->
+<!-- carousel section -->
 <section class="vehicle_section layout_padding">
     <div class="container">
-        <div id='vehicule'>
+        <div id='Services'>
             <h2 class="main-heading ">
-                Vehicles Facility
+                Nos Services
             </h2>
         </div>
-        <p class="text-center">
-            There are many variations of passages of Lorem Ipsum available, but the majority hThere are many variations of
-            passages of Lorem Ipsum available, but the majority h
-        </p>
-        <div class="layout_padding-top">
+        <div class="layout_padding-top2">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="vehicle_img-box ">
-                            <img src="<?php echo Chemins::IMAGES . 'bus.png' ?>" alt="" class="img-fluid w-100">
+                            <p class="text-centre">
+                                Centre de Loisirs le mercredi et une partie des vacances (première moitié) classique
+                                ou avec Anglais renforcé .
+                            </p>
+                            <img src="<?php echo Chemins::IMAGES . 'centre.png' ?>" alt="" class="img-fluid w-100">
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="vehicle_img-box ">
-                            <img src="<?php echo Chemins::IMAGES . 'bus.png' ?>" alt="" class="img-fluid w-100">
+                            <p class="text-cantine">
+                                Cantine en Lunch box ou commande traiteur BIO
+                            </p>
+                            <img src="<?php echo Chemins::IMAGES . 'cantine.png' ?>" alt="" class="img-fluid w-100">
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="vehicle_img-box ">
-                            <img src="<?php echo Chemins::IMAGES . 'bus.png' ?>" alt="" class="img-fluid w-100">
+                            <p class="text-garderie">
+                                Garderie le matin de 7h30 à 8h20 et le soir de 17h à 19h00
+                            </p>
+                            <img src="<?php echo Chemins::IMAGES . 'garderie.png' ?>" alt="" class="img-fluid w-100">
                         </div>
                     </div>
                 </div>
@@ -148,8 +107,10 @@
     </div>
 </section>
 
+<!-- carousel section -->
 
-<!-- vehicle section -->
+
+
 <!-- client section -->
 <section class="client_section layout_padding">
     <div class="container">
