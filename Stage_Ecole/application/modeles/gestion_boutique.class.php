@@ -1,9 +1,6 @@
 <?php
 
-
-
 class GestionBoutique {
-    
     // <editor-fold defaultstate="collapsed" desc="Champs statiques"> 
 
     /**
@@ -42,7 +39,8 @@ class GestionBoutique {
         }
     }
 
-     public static function isAdminOK($login, $passe) {
+
+    public static function isAdminOK($login, $passe) {
         self::seConnecter();
         self::$requete = "SELECT * FROM utilisateur where Mail = :login and mdp = :passe";
         self::$pdoStResults = self::$pdoCnxBase->prepare(self::$requete);
@@ -56,15 +54,11 @@ class GestionBoutique {
         else
             return false;
     }
-    
-    
-    
-    
-    
+
     public static function seDeconnecter() {
         self::$pdoCnxBase = null; //base a null donc déconnecter
     }
-    
+
     public static function getLesTuplesByTable($table) {
         self::seConnecter();
 
@@ -77,8 +71,8 @@ class GestionBoutique {
 
         return self::$resultat;
     }
-    
-    public static function getLeTupleTableById($table,$id) {
+
+    public static function getLeTupleTableById($table, $id) {
         self::seConnecter();
         self::$requete = "Select * FROM $table WHERE id = $id";
         self::$pdoStResults = self::$pdoCnxBase->prepare(self::$requete);
@@ -89,7 +83,7 @@ class GestionBoutique {
 
         return self::$resultat;
     }
-    
+
     private static function getLeTupleByTable($table) {
         self::seConnecter();
 
@@ -102,10 +96,14 @@ class GestionBoutique {
 
         return self::$resultat;
     }
-    
 
-    
-    
+    public static function getActualiteById($idActualite) {
+        $sql = "SELECT Titre,description,privacy FROM actualite WHERE idActualite = :idActualite";
+        $stmt = self::$pdo->prepare($sql);
+        $stmt->execute(['idActualite' => $idActualite]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     public static function getNbTupleByTable($table) {
         self::seConnecter();
         self::$requete = "SELECT Count(*) AS nbTuples FROM $table";
@@ -115,7 +113,8 @@ class GestionBoutique {
         self::$pdoStResults->closeCursor();
         return self::$resultat->nbTuples;
     }
-    
+
     // </editor-fold>
 }
+
 ?>
