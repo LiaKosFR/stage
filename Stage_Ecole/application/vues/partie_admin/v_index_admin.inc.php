@@ -43,11 +43,11 @@
 
             </select>
 
-            <input type="text" id="nouveau_nom_actualite" name="nouveau_nom_actualite" placeholder="Nouveau Nom" required></br>
+            <input type="text" id="nouveau_nom_actualite" name="nouveau_nom_actualite" placeholder="Nouveau Titre" required></br>
             <label for="nom">Description de l'actualite :</label>
             <input type="text" id="descrption_actualite" name="descrption_actualite" value="" required></br>
             <label for="nom">Image de l'actualite :</label>
-            <input type="text" id="image_actualite" name="image_actualite" value="" required></br>
+            <input type="file" id="image" name="image"></br>
             <label for="nom">Visibilité de l'actualite :</label>
             <select id="Privacy_actualite" name="Privacy_actualite" required>
                 <option value="">Sélectionner la visibilite de l'actualite</option>
