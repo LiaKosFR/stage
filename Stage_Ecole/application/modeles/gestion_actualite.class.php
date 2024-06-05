@@ -56,6 +56,19 @@ class GestionActualite {
         return GestionBoutique::$resultat;
 
     }
+    public static function getLesActualitesPublic(){
+        GestionBoutique::seConnecter();
+
+        GestionBoutique::$requete = "Select * FROM actualite WHERE privacy = 0 ORDER BY dates DESC;";
+        GestionBoutique::$pdoStResults = GestionBoutique::$pdoCnxBase->prepare(GestionBoutique::$requete);
+        GestionBoutique::$pdoStResults->execute();
+        GestionBoutique::$resultat = GestionBoutique::$pdoStResults->fetchAll();
+
+        GestionBoutique::$pdoStResults->closeCursor();
+
+        return GestionBoutique::$resultat;
+
+    }
 
 
     public static function getActualiteById($idActualite) {

@@ -6,8 +6,15 @@ class ControleurActualite {
 
     public function afficherActualite() {
 //        GestionBoutique::getLesTuplesByTable('actualite');
-        VariablesGlobales::$lesActualites = GestionActualite::getLesActualites();
-        require Chemins::VUES . 'v_actualite.inc.php';
+        if (isset($_SESSION['login_admin'])){
+            VariablesGlobales::$lesActualites = GestionActualite::getLesActualites();
+        require Chemins::VUES . 'v_actualite.inc.php';}
+        else{
+            VariablesGlobales::$lesActualites = GestionActualite::getLesActualitesPublic();
+            require Chemins::VUES . 'v_actualite.inc.php';
+            
+           
+        }
     }
 
     public function __construct() {
@@ -36,7 +43,7 @@ class ControleurActualite {
         if (isset($_GET['idActualite'])) {
             $idActualite = $_GET['idActualite'];
             $actualite = GestionActualite::getActualiteById($idActualite);
-            require Chemins::VUES_ADMIN . 'modifier_actualite_view.inc.php'; 
+            require Chemins::VUES_ADMIN . 'modifier_actualite_view.inc.php';
         }
     }
 
@@ -65,6 +72,8 @@ class ControleurActualite {
         GestionActualite::modifier($idActualite, $nouveauTitre, $description, $image, $privacy);
         header("Location:index.php?controleur=Actualite&action=afficherActualite");
     }
+
+  
 }
 
 ?>

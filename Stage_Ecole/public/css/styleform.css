@@ -19,7 +19,6 @@
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-    position: relative;
     overflow: hidden;
     width: 768px;
     max-width: 100%;
@@ -27,10 +26,11 @@
     margin-top:5px;
     margin-left: 550px;
     padding-bottom:  10px;
+    
 }
 .sectionConnexionAdmin{
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    display: flex;
     
 }
 
@@ -125,11 +125,17 @@ form {
     padding-left: 10px;
     margin-top: 20px;
     height: 500px;
+    
+     
 }
 .produit h2{
     text-align: center;
     padding-bottom: 15px;
     text-decoration:underline;
+}
+.formModifierActualite .bouton_form{
+   margin-top: 10px;
+   margin-left: 350px;
 }
 
 
