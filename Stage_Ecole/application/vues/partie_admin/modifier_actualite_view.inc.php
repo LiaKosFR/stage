@@ -22,7 +22,7 @@
             </select>
             <input type="text" id="nouveau_nom_actualite" name="nouveau_nom_actualite" placeholder="Nouveau Titre" value="<?php echo isset($actualite['Titre']) ? $actualite['Titre'] : ''; ?>" required><br>
             <label for="descrption_actualite">Description de l'actualité :</label>
-            <input type="text" id="descrption_actualite" name="descrption_actualite" value="<?php echo isset($actualite['description']) ? $actualite['description'] : ''; ?>" required><br>
+            <input type="text" id="description_actualite" name="description_actualite" value="<?php echo isset($actualite['description']) ? $actualite['description'] : ''; ?>" required><br>
             <label for="image">Image de l'actualité :</label>
             <input type="file" id="image" name="image"><br>
             <label for="Privacy_actualite">Visibilité de l'actualité :</label>

@@ -21,12 +21,14 @@ class ControleurActualite {
         $privacy = $_POST["Privacy_actualite"];
 
         GestionActualite::ajouter($TitreActualite, $description, $dates, $image, $privacy);
+        header("Location:index.php?controleur=Actualite&action=afficherActualite");
     }
 
     public function SupprimerActualite() {
         $id = $_POST["actualite_a_supprimer"];
 
         GestionActualite::supprimerById($id);
+        header("Location:index.php?controleur=Actualite&action=afficherActualite");
     }
 
     public function afficherModifierActualite() {
@@ -60,6 +62,7 @@ class ControleurActualite {
         $privacy = $_POST["Privacy_actualite"];
 
         GestionActualite::modifier($idActualite, $nouveauTitre, $description, $image, $privacy);
+        header("Location:index.php?controleur=Actualite&action=afficherActualite");
     }
 }
 
