@@ -5,7 +5,8 @@ class ControleurActualite {
     
     
     public function afficherActualite() {
-        VariablesGlobales::$lesActualites = GestionBoutique::getLesTuplesByTable('actualite');
+//        GestionBoutique::getLesTuplesByTable('actualite');
+        VariablesGlobales::$lesActualites = GestionActualite::getLesActualites();
         require Chemins::VUES . 'v_actualite.inc.php';
         }
     
