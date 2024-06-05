@@ -19,54 +19,102 @@
                 <option value="">Sélectionner la visibilite de l'actualite</option>
                 <option value="0">public</option>
                 <option value="1">privé</option>
-                
+
             </select></br>
             <input  class ="bouton_form" type="submit"  value="Ajouter"/>
         </form>
 
 
 
-        <form  class="formModifierActualite" action="index.php?controleur=Categories&action=modifierCategorie" method="POST">
-            <label for="actualite_a_modifier">Modifier l'actualite :</label>
+        <!--        <form class="formModifierActualite" action="index.php?controleur=Actualite&action=modifierActualite" method="POST">
+                    <label for="actualite_a_modifier">Modifier l'actualité :</label>
+                    <select id="actualite_a_modifier" name="actualite_a_modifier" required>
+                        <option value="">Sélectionner l'actualité</option>
+        <?php
+        $lesActualites = GestionBoutique::getLesTuplesByTable("actualite");
+        foreach ($lesActualites as $uneActualite) {
+            echo '<option value="' . $uneActualite->idActualite . '">' . $uneActualite->Titre . '</option>';
+        }
+        ?>
+                    </select>
+                    <input type="text" id="nouveau_nom_actualite" name="nouveau_nom_actualite" placeholder="Nouveau Titre" required><br>
+                    <label for="descrption_actualite">Description de l'actualité :</label>
+                    <input type="text" id="descrption_actualite" name="descrption_actualite" value="" required><br>
+                    <label for="image">Image de l'actualité :</label>
+                    <input type="file" id="image" name="image"><br>
+                    <label for="Privacy_actualite">Visibilité de l'actualité :</label>
+                    <select id="Privacy_actualite" name="Privacy_actualite" required>
+                        <option value="">Sélectionner la visibilité de l'actualité</option>
+                        <option value="0">Public</option>
+                        <option value="1">Privé</option>
+                    </select><br>
+                    <input class="bouton_form" type="submit" value="Modifier">
+                </form>-->
 
-            <select id="actualite_a_modifier" name="actualite_a_modifier" required>
-                <option value="">Sélectionner l'actualite</option>
+        <form id="selectActualiteForm" method="GET" action="index.php">
+            <input type="hidden" name="controleur" value="Actualite">
+            <input type="hidden" name="action" value="afficherModifierActualite">
+            <label for="actualite_a_modifier">Modifier l'actualité :</label>
+            <select id="actualite_a_modifier" name="idActualite" required>
+                <option value="">Sélectionner l'actualité</option>
                 <?php
                 $lesActualites = GestionBoutique::getLesTuplesByTable("actualite");
-              
-                foreach($lesActualites as $uneActualite) { // Remplir le select avec les actualites
-                    ?>
-                    <option value="<?php echo $uneActualite->idActualite ?>"> <?php echo $uneActualite->Titre ?></option>
-                    <?php
+                foreach ($lesActualites as $uneActualite) {
+                    echo '<option value="' . $uneActualite->idActualite . '">' . $uneActualite->Titre . '</option>';
                 }
                 ?>
-
             </select>
-
-            <input type="text" id="nouveau_nom_actualite" name="nouveau_nom_actualite" placeholder="Nouveau Nom" required></br>
-            <label for="nom">Description de l'actualite :</label>
-            <input type="text" id="descrption_actualite" name="descrption_actualite" value="" required></br>
-            <label for="nom">Image de l'actualite :</label>
-            <input type="text" id="image_actualite" name="image_actualite" value="" required></br>
-            <label for="nom">Visibilité de l'actualite :</label>
-            <select id="Privacy_actualite" name="Privacy_actualite" required>
-                <option value="">Sélectionner la visibilite de l'actualite</option>
-                <option value="0">public</option>
-                <option value="1">privé</option>
-                
-            </select></br>
-
-            <input class ="bouton_form" type="submit" value="Modifier">
         </form>
+
+        <script>
+            document.getElementById('actualite_a_modifier').addEventListener('change', function () {
+                document.getElementById('selectActualiteForm').submit();
+            });
+        </script>
+
+
+
+<!--        <script>
+            $(document).ready(function () {
+                $('#actualite_a_modifier').change(function () {
+                    var idActualite = $(this).val();
+                    console.log("Actualité sélectionnée: " + idActualite); // Debug
+                    if (idActualite) {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'index.php?controleur=Actualite&action=getActualiteDetails',
+                            data: {idActualite: idActualite},
+                            dataType: 'json',
+                            success: function (response) {
+                                console.log("Réponse du serveur: ", response); // Debug
+                                if (response) {
+                                    $('#nouveau_nom_actualite').val(response.Titre);
+                                    $('#descrption_actualite').val(response.description);
+                                    $('#Privacy_actualite').val(response.privacy);
+                                }
+                            },
+                            error: function (xhr, status, error) {
+                                console.error("Erreur lors de la récupération des détails de l'actualité:", error); // Debug
+                                alert('Erreur lors de la récupération des détails de l\'actualité.');
+                            }
+                        });
+                    } else {
+                        $('#nouveau_nom_actualite').val('');
+                        $('#descrption_actualite').val('');
+                        $('#Privacy_actualite').val('');
+                    }
+                });
+            });
+        </script>-->
 
         <form  class="formSuppActualite"action="index.php?controleur=Actualite&action=SupprimerActualite" method="POST">
             <label for="actualite_a_supprimer">Supprimer une actualite</label>
             <select id="actualite_a_supprimer" name="actualite_a_supprimer" required>
                 <option value="">Sélectionner l'actualite</option>
-               <?php
+                <?php
                 $lesActualites = GestionBoutique::getLesTuplesByTable("actualite");
-              
-                foreach($lesActualites as $uneActualite) { // Remplir le select avec les actualites
+
+                foreach ($lesActualites as $uneActualite) { // Remplir le select avec les actualites
                     ?>
                     <option value="<?php echo $uneActualite->idActualite ?>"> <?php echo $uneActualite->Titre ?></option>
                     <?php
@@ -74,7 +122,7 @@
                 ?>
 
             </select>
-            
+
             <input class ="bouton_form" type="submit" value="Supprimer">
         </form>
     </div>
@@ -84,23 +132,6 @@
 
 </section>
 
- <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const actualiteSelect = document.getElementById('actualite_a_modifier');
-    actualiteSelect.addEventListener('change', function() {
-        const actualiteId = this.value;
-        if (actualiteId) {
-            fetch(`index.php?controleur=Actualite&action=getActualite&id=${actualiteId}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data) {
-                        document.getElementById('nouveau_nom_actualite').value = data.Titre;
-                        document.getElementById('descrption_actualite').value = data.Description;
-                        document.getElementById('image_actualite').value = data.Image;
-                    }
-                })
-                .catch(error => console.error('Error fetching data:', error));
-        }
-    });
-});
-</script>
+
+
+

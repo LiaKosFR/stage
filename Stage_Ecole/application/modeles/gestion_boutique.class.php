@@ -1,9 +1,6 @@
 <?php
 
-
-
 class GestionBoutique {
-    
     // <editor-fold defaultstate="collapsed" desc="Champs statiques"> 
 
     /**
@@ -27,8 +24,8 @@ class GestionBoutique {
     /**
      * Permet de se connecter à la base de données
      */
-    public static function seConnecter() {
-        if (!isset(self::$pdoCnxBase)) { //S'il n'y a pas encore eu de connexion
+        public static function seConnecter() {
+        if (!isset(self::$pdoCnxBase)) { // S'il n'y a pas encore eu de connexion
             try {
                 self::$pdoCnxBase = new PDO('mysql:host=' . MysqlConfig::SERVEUR . ';dbname=' . MysqlConfig::BASE, MysqlConfig::UTILISATEUR, MysqlConfig::MOT_DE_PASSE);
                 self::$pdoCnxBase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -40,9 +37,10 @@ class GestionBoutique {
                 echo 'Code : ' . $e->getCode(); // méthode de la classe Exception
             }
         }
+        return self::$pdoCnxBase; // Retourne la connexion PDO
     }
 
-     public static function isAdminOK($login, $passe) {
+    public static function isAdminOK($login, $passe) {
         self::seConnecter();
         self::$requete = "SELECT * FROM utilisateur where Mail = :login and mdp = :passe";
         self::$pdoStResults = self::$pdoCnxBase->prepare(self::$requete);
@@ -56,15 +54,11 @@ class GestionBoutique {
         else
             return false;
     }
-    
-    
-    
-    
-    
+
     public static function seDeconnecter() {
         self::$pdoCnxBase = null; //base a null donc déconnecter
     }
-    
+
     public static function getLesTuplesByTable($table) {
         self::seConnecter();
 
@@ -77,8 +71,8 @@ class GestionBoutique {
 
         return self::$resultat;
     }
-    
-    public static function getLeTupleTableById($table,$id) {
+
+    public static function getLeTupleTableById($table, $id) {
         self::seConnecter();
         self::$requete = "Select * FROM $table WHERE id = $id";
         self::$pdoStResults = self::$pdoCnxBase->prepare(self::$requete);
@@ -89,7 +83,7 @@ class GestionBoutique {
 
         return self::$resultat;
     }
-    
+
     private static function getLeTupleByTable($table) {
         self::seConnecter();
 
@@ -102,10 +96,8 @@ class GestionBoutique {
 
         return self::$resultat;
     }
-    
 
-    
-    
+
     public static function getNbTupleByTable($table) {
         self::seConnecter();
         self::$requete = "SELECT Count(*) AS nbTuples FROM $table";
@@ -115,7 +107,8 @@ class GestionBoutique {
         self::$pdoStResults->closeCursor();
         return self::$resultat->nbTuples;
     }
-    
+
     // </editor-fold>
 }
+
 ?>

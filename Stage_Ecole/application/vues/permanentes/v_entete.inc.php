@@ -29,6 +29,7 @@
   <!-- responsive style -->
   <link href="<?php echo Chemins::CSS . 'responsive.css' ?>" rel="stylesheet" />
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link href="<?php echo Chemins::CSS . "styleform.css"; ?>" rel="stylesheet" type="text/css">
 
 
