@@ -43,9 +43,18 @@ class GestionActualite {
         GestionBoutique::$pdoStResults->bindValue('idUtilisateur', $idUtilisateur);
         GestionBoutique::$pdoStResults->execute();
     }
+    public static function getLesActualites(){
+        GestionBoutique::seConnecter();
 
-    public static function getLesActualites() {
-        GestionBoutique::getLesTuplesByTable("actualite");
+        GestionBoutique::$requete = "Select * FROM actualite ORDER BY dates DESC;";
+        GestionBoutique::$pdoStResults = GestionBoutique::$pdoCnxBase->prepare(GestionBoutique::$requete);
+        GestionBoutique::$pdoStResults->execute();
+        GestionBoutique::$resultat = GestionBoutique::$pdoStResults->fetchAll();
+
+        GestionBoutique::$pdoStResults->closeCursor();
+
+        return GestionBoutique::$resultat;
+
     }
 
 
