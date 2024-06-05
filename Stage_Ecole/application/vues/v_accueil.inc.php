@@ -117,10 +117,6 @@
         <h2 class="main-heading ">
             Nos Retours
         </h2>
-        <p class="text-center">
-            There are many variations of passages of Lorem Ipsum available, but the majority hThere are many variations of
-            passages of Lorem Ipsum available, but the majority h
-        </p>
         <div class="layout_padding2">
             <div class="client_container d-flex flex-column">
                 <?php require_once Chemins::VUES . 'google_reviews.inc.php' ?>

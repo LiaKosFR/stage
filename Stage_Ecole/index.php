@@ -11,7 +11,7 @@ require Chemins::VUES_PERMANENTES.'v_entete.inc.php';
 require Chemins::VUES_PERMANENTES.'v_menu.inc.php';
 
 
-    require_once Chemins::CONTROLEURS . 'ControleurActualite.class.php';
+require_once Chemins::CONTROLEURS . 'ControleurActualite.class.php';
 
     
 if (!isset($_REQUEST['controleur'])) {

@@ -29,13 +29,25 @@ class ControleurActualite {
         GestionActualite::supprimerById($id);
     }
 
-       public function getActualiteDetails() {
+    public function afficherModifierActualite() {
+        if (isset($_GET['idActualite'])) {
+            $idActualite = $_GET['idActualite'];
+            $actualite = GestionActualite::getActualiteById($idActualite);
+            require Chemins::VUES_ADMIN . 'modifier_actualite_view.inc.php'; 
+        }
+    }
+
+    public function getActualiteDetails() {
         if (isset($_POST['idActualite'])) {
             $idActualite = $_POST['idActualite'];
-            $actualite = GestionActualite::getActualiteById($idActualite); 
+            $actualite = GestionActualite::getActualiteById($idActualite);
 
-            header('Content-Type: application/json');
-            echo json_encode($actualite);
+            if ($actualite) {
+                header('Content-Type: application/json');
+                echo json_encode($actualite);
+            } else {
+                echo json_encode(['error' => 'Erreur lors de la récupération des détails de l\'actualité.']);
+            }
             exit;
         }
     }
@@ -49,8 +61,6 @@ class ControleurActualite {
 
         GestionActualite::modifier($idActualite, $nouveauTitre, $description, $image, $privacy);
     }
-    
-    
 }
 
 ?>

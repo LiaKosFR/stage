@@ -24,8 +24,8 @@ class GestionBoutique {
     /**
      * Permet de se connecter à la base de données
      */
-    public static function seConnecter() {
-        if (!isset(self::$pdoCnxBase)) { //S'il n'y a pas encore eu de connexion
+        public static function seConnecter() {
+        if (!isset(self::$pdoCnxBase)) { // S'il n'y a pas encore eu de connexion
             try {
                 self::$pdoCnxBase = new PDO('mysql:host=' . MysqlConfig::SERVEUR . ';dbname=' . MysqlConfig::BASE, MysqlConfig::UTILISATEUR, MysqlConfig::MOT_DE_PASSE);
                 self::$pdoCnxBase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -37,8 +37,8 @@ class GestionBoutique {
                 echo 'Code : ' . $e->getCode(); // méthode de la classe Exception
             }
         }
+        return self::$pdoCnxBase; // Retourne la connexion PDO
     }
-
 
     public static function isAdminOK($login, $passe) {
         self::seConnecter();
@@ -97,12 +97,6 @@ class GestionBoutique {
         return self::$resultat;
     }
 
-    public static function getActualiteById($idActualite) {
-        $sql = "SELECT Titre,description,privacy FROM actualite WHERE idActualite = :idActualite";
-        $stmt = self::$pdo->prepare($sql);
-        $stmt->execute(['idActualite' => $idActualite]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
 
     public static function getNbTupleByTable($table) {
         self::seConnecter();

@@ -1,6 +1,8 @@
 <?php
+require_once Chemins::CONFIGS . 'mysql_config.class.php'; 
 
-require_once 'gestion_boutique.class.php';
+require_once Chemins::MODELES . 'gestion_boutique.class.php';
+
 
 class GestionActualite {
 
@@ -46,15 +48,24 @@ class GestionActualite {
         GestionBoutique::getLesTuplesByTable("actualite");
     }
 
+
     public static function getActualiteById($idActualite) {
-        $sql = "SELECT * FROM actualite WHERE idActualite = :idActualite";
-        $stmt = Database::getConnection()->prepare($sql);
+    $pdo = GestionBoutique::seConnecter();
+    if ($pdo) {
+        $sql = "SELECT Titre, description, privacy FROM actualite WHERE idActualite = :idActualite";
+        $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':idActualite', $idActualite, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
+    } else {
+        echo 'Erreur : Impossible de se connecter à la base de données.';
+        return false;
     }
+}
+
 
     public static function modifier($idActualite, $nouveauTitre, $description, $image, $privacy) {
+        GestionBoutique::seConnecter();
         $pdo = GestionBoutique::seConnecter();
         $sql = "UPDATE actualite SET Titre = :Titre, description = :Description, image = :Image, privacy = :Visibility WHERE idActualite = :idActualite";
         $stmt = $pdo->prepare($sql);
@@ -73,4 +84,6 @@ class GestionActualite {
 }
 
 // </editor-fold>   
+
+
 ?>
