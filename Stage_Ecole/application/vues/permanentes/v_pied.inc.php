@@ -22,6 +22,36 @@
       });
     }
   </script>
+  
+      <script>
+        // Récupère le bouton
+        let backToTopBtn = document.querySelector(".btn");
+
+        // Affiche le bouton lorsque l'utilisateur fait défiler vers le bas de 20px à partir du sommet du document
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        }
+
+        // Lorsque l'utilisateur clique sur le bouton, fait défiler vers le haut du document
+        backToTopBtn.onclick = function() {
+            topFunction();
+        };
+
+        function topFunction() {
+            document.body.scrollTop = 0; // Pour Safari
+            document.documentElement.scrollTop = 0; // Pour Chrome, Firefox, IE et Opera
+        }
+    </script>
+  
+  
 <!-- google map js -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -29,19 +59,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- end google map js -->
 <!-- bouton remonter page -->
-<script>
-const btn = document.querySelector('.btn');
 
-btn.addEventListener('click', () => {
-
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth"
-    })
-
-})
-</<script>
 </body>
 
 </html>

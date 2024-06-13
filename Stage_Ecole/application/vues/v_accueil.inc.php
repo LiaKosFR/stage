@@ -1,7 +1,10 @@
 <div class="btn">
    <img src="<?php echo Chemins::IMAGES . 'arrow.svg' ?>" class="icone">
    
-    </div>
+</div>
+
+
+
 <section class="hero_section ">
     <div class="hero-container container">
         <div class="hero_detail-box">
@@ -118,11 +121,13 @@
 <!-- client section -->
 <section class="client_section layout_padding">
     <div class="container">
-        <h2 class="main-heading ">
+        
+        <div class="layout_padding2">
+            
+            <div class="client_container d-flex flex-column">
+                <h2 class="main-heading ">
             Nos Retours
         </h2>
-        <div class="layout_padding2">
-            <div class="client_container d-flex flex-column">
                 <?php require_once Chemins::VUES . 'google_reviews.inc.php' ?>
             </div>
         </div>

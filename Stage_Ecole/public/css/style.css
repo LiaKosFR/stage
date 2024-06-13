@@ -4,6 +4,8 @@ body {
   color: #48494a;
   background-image: url(../images/fond_logo.png);
 }
+
+
 .btn {
     height: 50px;
     width: 50px;
@@ -17,6 +19,9 @@ body {
     bottom: 20px;
     cursor: pointer;
 }
+
+
+
 .icone {
     width: 50px;
 }
@@ -126,7 +131,7 @@ a:focus {
 }
 
 .top_container {
-  height: 95vh;
+  height: 70vh;
   position: relative;
 }
 
