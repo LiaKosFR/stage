@@ -28,6 +28,20 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- end google map js -->
+<!-- bouton remonter page -->
+<script>
+const btn = document.querySelector('.btn');
+
+btn.addEventListener('click', () => {
+
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    })
+
+})
+</<script>
 </body>
 
 </html>

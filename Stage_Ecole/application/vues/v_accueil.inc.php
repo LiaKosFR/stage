@@ -1,3 +1,7 @@
+<div class="btn">
+   <img src="<?php echo Chemins::IMAGES . 'arrow.svg' ?>" class="icone">
+   
+    </div>
 <section class="hero_section ">
     <div class="hero-container container">
         <div class="hero_detail-box">
