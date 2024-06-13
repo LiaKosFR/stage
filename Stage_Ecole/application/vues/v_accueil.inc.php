@@ -1,6 +1,6 @@
 <div class="btn">
-   <img src="<?php echo Chemins::IMAGES . 'arrow.svg' ?>" class="icone">
-   
+    <img src="<?php echo Chemins::IMAGES . 'arrow.svg' ?>" class="icone">
+
 </div>
 
 
@@ -47,11 +47,11 @@
         </div>
         <p class="text-center">
             Située entre Pontoise et Ennery au sein du parc du château de l'Hermitage l'Ecole primaire Bilingue Jamondeyra accueille vos enfants de la maternelle au CM2.
-          Les enfants seront accueillis dans un cadre bienveillant. Notre Pédagogie est tournée vers les besoins de votre enfant avec des classes à petit Effectif, des objectifs individualisés , un rythme de vie respecté.
-        Les enfants bénéficient de cours d'anglais journalier (30 min pour les Maternelles et 1h30 pour les élémentaires) prodigués par une enseignante spécialisée.
-        Des initiations par des intervenants extérieurs (Espagnol ,Pâtisserie , chants , potager ...) sont proposées au cours de l'année .
-        Apprendre à être critique sur les informations trouvées sur internet et les réseaux sociaux afin de prévenir des dangers.
-        Bienveillance , Adaptation , Autonomie ,Encouragements sont les maitres mots de notre pédagogie afin de permettre aux enfants de devenir des citoyens du monde de demain épanouis .
+            Les enfants seront accueillis dans un cadre bienveillant. Notre Pédagogie est tournée vers les besoins de votre enfant avec des classes à petit Effectif, des objectifs individualisés , un rythme de vie respecté.
+            Les enfants bénéficient de cours d'anglais journalier (30 min pour les Maternelles et 1h30 pour les élémentaires) prodigués par une enseignante spécialisée.
+            Des initiations par des intervenants extérieurs (Espagnol ,Pâtisserie , chants , potager ...) sont proposées au cours de l'année .
+            Apprendre à être critique sur les informations trouvées sur internet et les réseaux sociaux afin de prévenir des dangers.
+            Bienveillance , Adaptation , Autonomie ,Encouragements sont les maitres mots de notre pédagogie afin de permettre aux enfants de devenir des citoyens du monde de demain épanouis .
         </p>
         <div class="about_img-box ">
             <img src="<?php echo Chemins::IMAGES . 'kids.jpg' ?>" alt="" class="img-fluid w-100">
@@ -121,13 +121,13 @@
 <!-- client section -->
 <section class="client_section layout_padding">
     <div class="container">
-        
+
         <div class="layout_padding2">
-            
+
             <div class="client_container d-flex flex-column">
                 <h2 class="main-heading ">
-            Nos Retours
-        </h2>
+                    Nos Retours
+                </h2>
                 <?php require_once Chemins::VUES . 'google_reviews.inc.php' ?>
             </div>
         </div>
@@ -141,50 +141,33 @@
 
 <!-- contact section -->
 
-<section class="contact_section layout_padding-bottom">
-    <div class="container">
-        <div id='ContactNow'>
-            <h2 class="main-heading">
-                Nous Contacter
-            </h2>
-        </div>
-        <p class="text-center">
-            En cas de problèmes ou de questions veuillez nous contacter ci-dessous.
-
-        </p>
-        <div class="">
+    <section class="contact_section">
+        <div class="containerA" id="ContactNow">
+            <h2 class="main-heading">Nous Contacter</h2>
+            <p class="text-center">En cas de problèmes ou de questions, veuillez nous contacter ci-dessous.</p>
             <div class="contact_section-container">
-                <div class="row">
-                    <div class="col-md-6 mx-auto">
-                        <div class="image_contact">
-                             <div class="contact-form">
-                                <form action="">
-                                    <div>
-                                        <input type="text" placeholder="Name">
-                                    </div>
-                                    <div>
-                                        <input type="text" placeholder="Phone Number">
-                                    </div>
-                                    <div>
-                                        <input type="email" placeholder="Email">
-                                    </div>
-                                    <div>
-                                        <input type="text" placeholder="Message" class="input_message">
-                                    </div>
-                                    <div class="d-flex justify-content-center">
-                                        <button type="submit" class="btn_on-hover">
-                                            Envoyer
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
+                <div class="contact-form">
+                    <form action="index.php?controleur=Mail&action=sendMail" method="POST">
+                        <div>
+                            <input type="text" name="name" placeholder="Nom" required>
                         </div>
-                    </div>
+                        <div>
+                            <input type="text" name="phone" placeholder="Numéro de téléphone" required>
+                        </div>
+                        <div>
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div>
+                            <textarea name="message" placeholder="Message" class="input_message" required></textarea>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn_on-hover">Envoyer</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 <!-- end contact section -->

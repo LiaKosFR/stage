@@ -23,33 +23,7 @@
     }
   }
   
-  // Récupère le bouton
-let backToTopBtn = document.querySelector(".btn");
-
-// Affiche le bouton lorsque l'utilisateur fait défiler vers le bas de 20px à partir du sommet du document
-window.onscroll = function() {
-    scrollFunction();
-};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTopBtn.style.display = "block";
-    } else {
-        backToTopBtn.style.display = "none";
-    }
-}
-
-// Lorsque l'utilisateur clique sur le bouton, fait défiler vers le haut du document
-backToTopBtn.onclick = function() {
-    topFunction();
-};
-
-function topFunction() {
-    document.body.scrollTop = 0; // Pour Safari
-    document.documentElement.scrollTop = 0; // Pour Chrome, Firefox, IE et Opera
-}
-
-
+ 
   function _createClass(Constructor, protoProps, staticProps) {
     if (protoProps) _defineProperties(Constructor.prototype, protoProps);
     if (staticProps) _defineProperties(Constructor, staticProps);
