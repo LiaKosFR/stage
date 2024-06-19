@@ -44,7 +44,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.php?controleur=utilisateur&action=seDeconnecter">Se Déconnecter</a>
+                                    <a class="nav-link" href="index.php?controleur=Admin&action=afficherIndex">Administration</a>
                                 </li>
 
                             </ul>
@@ -54,4 +54,6 @@
             </div>
         </header>
         <!-- Navbar End -->
+
+
 
