@@ -8,7 +8,12 @@ require_once Chemins::MODELES . 'gestion_boutique.class.php';
 require_once Chemins::CONFIGS.'mysql_config.class.php';
 require_once Chemins::CONFIGS.'variables_globales.class.php';
 require Chemins::VUES_PERMANENTES.'v_entete.inc.php';
-require Chemins::VUES_PERMANENTES.'v_menu.inc.php';
+if (isset($_SESSION['login'])){
+        require Chemins::VUES_PERMANENTES.'v_menu.inc.php';}
+        else{
+            require Chemins::VUES_PERMANENTES.'v_menu.inc.php';
+        }
+
 
 
 require_once Chemins::CONTROLEURS . 'ControleurActualite.class.php';

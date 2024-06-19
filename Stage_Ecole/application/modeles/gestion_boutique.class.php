@@ -54,6 +54,18 @@ class GestionBoutique {
         else
             return false;
     }
+      public static function isRegistered($login, $passe) {  
+        self::seConnecter();
+        self::$requete = "SELECT * FROM utilisateur where mail =:login and mdp =:passe";
+        self::$pdoStResults = self::$pdoCnxBase->prepare(self::$requete);
+        self::$pdoStResults->bindValue('login', $login);
+        self::$pdoStResults->bindValue('passe', sha1($passe));
+        self::$pdoStResults->execute();
+        self::$resultat = self::$pdoStResults->fetch();
+        self::$pdoStResults->closeCursor();
+        
+        return (self::$resultat!=null);
+    }
 
     public static function seDeconnecter() {
         self::$pdoCnxBase = null; //base a null donc déconnecter

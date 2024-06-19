@@ -6,7 +6,7 @@ class ControleurActualite {
 
     public function afficherActualite() {
 //        GestionBoutique::getLesTuplesByTable('actualite');
-        if (isset($_SESSION['login_admin'])){
+        if (isset($_SESSION['login'])){
             VariablesGlobales::$lesActualites = GestionActualite::getLesActualites();
         require Chemins::VUES . 'v_actualite.inc.php';}
         else{

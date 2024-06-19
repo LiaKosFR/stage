@@ -14,14 +14,18 @@ class ControleurAdmin {
     }
 
     public function verifierConnexion() {
-
-        if (GestionBoutique::isAdminOK($_POST['login'], $_POST['passe'])) {
-            $_SESSION['login_admin'] = $_POST['login'];
-            if (isset($_POST['connexion_auto']))
-                setcookie('login_admin', $_POST['login'], time() + 7 * 24 * 3600, null, null, false, true);
-            header("Location:index.php");
-        } else
-            require Chemins::VUES_ADMIN . 'v_acces_interdit.inc.php';
+        if (GestionBoutique::isRegistered($_POST['login'], $_POST['passe'])) {
+            $_SESSION['login'] = $_POST['login'];
+            if (GestionBoutique::isAdminOK($_POST['login'], $_POST['passe'])) {
+                $_SESSION['login_admin'] = $_POST['login'];
+                if (isset($_POST['connexion_auto']))
+                    setcookie('login_admin', $_POST['login'], time() + 7 * 24 * 3600, null, null, false, true);
+                require Chemins::VUES_ADMIN . 'v_index_admin.inc.php';
+            } else
+                header("Location:index.php");
+        }else{
+            echo 'erreur';
+        }
     }
 
     public function seDeconnecter() {
