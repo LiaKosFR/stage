@@ -1,3 +1,4 @@
+
 <section class="indexAdmin">
     <div class="titre">
         Administration du site (Accès réservé)</br>
@@ -6,22 +7,25 @@
     <div class ="produit">
         <h2 class="titre_modifier_ajouter_supp">Ajouter/Modifier/Supprimer une actualité</h2>
 
-        <form class="formAjouterActualite" method="POST" action="index.php?controleur=Actualite&action=AjouterActualite">
+        <form class="formAjouterActualite" method="POST" action="index.php?controleur=Actualite&action=AjouterActualite" enctype="multipart/form-data">
             <input type="hidden" name="action" value="ajouterActualite">
-            <label for="nom">Titre de l'actualite :</label>
-            <input type="text" id="Titre" name="Titre" placeholder= "Entrez le Titre de l'actualité" required></br>
-            <label for="nom">Description de l'actualite :</label>
-            <input type="text" id="description" name="description" placeholder="Entrez la description" required></br>
-            <label for="nom">Image de l'actualite :</label>
-            <input type="file" id="image" name="image"></br>
-            <label for="nom">Visibilité de l'actualite :</label>
+            <label for="Titre">Titre de l'actualité :</label>
+            <input type="text" id="Titre" name="Titre" placeholder="Entrez le Titre de l'actualité" required><br>
+
+            <label for="description">Description de l'actualité :</label>
+            <input type="text" id="description" name="description" placeholder="Entrez la description" required><br>
+
+            <label for="image">Image de l'actualité :</label>
+            <input type="file" id="image" name="image"><br>
+
+            <label for="Privacy_actualite">Visibilité de l'actualité :</label>
             <select id="Privacy_actualite" name="Privacy_actualite" required>
-                <option value="">Sélectionner la visibilite de l'actualite</option>
+                <option value="">Sélectionner la visibilité de l'actualité</option>
                 <option value="0">public</option>
                 <option value="1">privé</option>
+            </select><br>
 
-            </select></br>
-            <input  class ="bouton_form" type="submit"  value="Ajouter"/>
+            <input class="bouton_form" type="submit" value="Ajouter">
         </form>
 
 

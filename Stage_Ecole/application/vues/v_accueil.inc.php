@@ -172,17 +172,18 @@
 
 <!-- end contact section -->
 
-<!-- admission section -->
-<section class="admission_section ">
-    <div class="container-fluid position-relative">
-        <div class="row h-100">
-            <div id="map" class="h-100 w-100 ">
-
-            </div>
-
-        </div>
+<footer>
+    <h2>Ecole Jamondeyra</h2>
+    <div class="social-media">
+        <h2>Réseaux Sociaux</h2>
+        <a href="https://www.facebook.com/people/Ecole-Jamondeyra/100063759752377/" target="_blank">
+            <img src="<?php echo Chemins::IMAGES . 'facebook-icon.png' ?>" alt="Facebook" width="30" height="30">
+        </a>
     </div>
-</section>
+    <div class="legal-mentions">
+        <p><a href="<?php echo Chemins::VUES . 'v_mentionLegale.inc.php'?>">Mentions Légales</a></p>
+    </div>
+</footer>
 
 
 
