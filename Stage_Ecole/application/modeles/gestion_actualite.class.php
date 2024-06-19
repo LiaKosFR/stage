@@ -1,8 +1,8 @@
 <?php
-require_once Chemins::CONFIGS . 'mysql_config.class.php'; 
+
+require_once Chemins::CONFIGS . 'mysql_config.class.php';
 
 require_once Chemins::MODELES . 'gestion_boutique.class.php';
-
 
 class GestionActualite {
 
@@ -43,7 +43,8 @@ class GestionActualite {
         GestionBoutique::$pdoStResults->bindValue('idUtilisateur', $idUtilisateur);
         GestionBoutique::$pdoStResults->execute();
     }
-    public static function getLesActualites(){
+
+    public static function getLesActualites() {
         GestionBoutique::seConnecter();
 
         GestionBoutique::$requete = "Select * FROM actualite ORDER BY dates DESC;";
@@ -54,9 +55,9 @@ class GestionActualite {
         GestionBoutique::$pdoStResults->closeCursor();
 
         return GestionBoutique::$resultat;
-
     }
-    public static function getLesActualitesPublic(){
+
+    public static function getLesActualitesPublic() {
         GestionBoutique::seConnecter();
 
         GestionBoutique::$requete = "Select * FROM actualite WHERE privacy = 0 ORDER BY dates DESC;";
@@ -67,24 +68,21 @@ class GestionActualite {
         GestionBoutique::$pdoStResults->closeCursor();
 
         return GestionBoutique::$resultat;
-
     }
-
 
     public static function getActualiteById($idActualite) {
-    $pdo = GestionBoutique::seConnecter();
-    if ($pdo) {
-        $sql = "SELECT Titre, description, privacy FROM actualite WHERE idActualite = :idActualite";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':idActualite', $idActualite, PDO::PARAM_INT);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    } else {
-        echo 'Erreur : Impossible de se connecter à la base de données.';
-        return false;
+        $pdo = GestionBoutique::seConnecter();
+        if ($pdo) {
+            $sql = "SELECT Titre, description, privacy FROM actualite WHERE idActualite = :idActualite";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':idActualite', $idActualite, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } else {
+            echo 'Erreur : Impossible de se connecter à la base de données.';
+            return false;
+        }
     }
-}
-
 
     public static function modifier($idActualite, $nouveauTitre, $description, $image, $privacy) {
         GestionBoutique::seConnecter();
@@ -100,12 +98,42 @@ class GestionActualite {
         ]);
     }
 
+    public static function modifierSansImage($idActualite, $nouveauTitre, $description, $privacy) {
+        GestionBoutique::seConnecter();
+        $pdo = GestionBoutique::seConnecter();
+        $sql = "UPDATE actualite SET Titre = :Titre, description = :Description, privacy = :Privacy WHERE idActualite = :idActualite";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            'Titre' => $nouveauTitre,
+            'Description' => $description,
+            'Privacy' => $privacy,
+            'idActualite' => $idActualite
+        ]);
+    }
+
+    public static function getImageById($idActualite) {
+        try {
+            $pdo = GestionBoutique::seConnecter(); 
+            $sql = "SELECT idActualite FROM actualite WHERE idActualite = :idActualite";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(['idActualite' => $idActualite]);
+            $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($resultat && isset($resultat['image'])) {
+                return $resultat['image']; // Retournez le nom de l'image
+            } else {
+                return null; // Aucune image trouvée pour cet identifiant
+            }
+        } catch (PDOException $e) {
+            // Gérer les erreurs de connexion ou de requête SQL
+            echo "Erreur SQL : " . $e->getMessage();
+            return null;
+        }
+    }
+
     private static function getConnexion() {
         // Retourner la connexion PDO ici
     }
 }
 
 // </editor-fold>   
-
-
 ?>

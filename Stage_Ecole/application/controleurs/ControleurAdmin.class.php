@@ -19,11 +19,11 @@ class ControleurAdmin {
             if (GestionBoutique::isAdminOK($_POST['login'], $_POST['passe'])) {
                 $_SESSION['login_admin'] = $_POST['login'];
                 if (isset($_POST['connexion_auto']))
-                    setcookie('login_admin', $_POST['login'], time() + 7 * 24 * 3600, null, null, false, true);
+                    setcookie('login_admin', $_POST['login'], time() + 7 * 24 * 3600, '/', ($_SERVER['HTTP_HOST'] != 'localhost') ? $_SERVER['HTTP_HOST'] : false, false, true);
                 require Chemins::VUES_ADMIN . 'v_index_admin.inc.php';
             } else
                 header("Location:index.php");
-        }else{
+        } else {
             echo 'erreur';
         }
     }

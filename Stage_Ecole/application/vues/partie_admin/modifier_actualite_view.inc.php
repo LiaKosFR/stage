@@ -8,7 +8,7 @@
     <div class ="produit">
         
         <h2 class="titre_modifier_ajouter_supp">Modifier une actualité</h2>
-        <form class="formModifierActualite" action="index.php?controleur=Actualite&action=modifierActualite" method="POST">
+        <form class="formModifierActualite" action="index.php?controleur=Actualite&action=modifierActualite" method="POST" enctype="multipart/form-data">
             <label for="actualite_a_modifier">Modifier l'actualité :</label>
             <select id="actualite_a_modifier" name="actualite_a_modifier" required>
                 <option value="">Sélectionner l'actualité</option>
