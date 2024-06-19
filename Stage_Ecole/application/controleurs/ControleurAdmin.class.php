@@ -24,7 +24,7 @@ class ControleurAdmin {
             } else
                 header("Location:index.php");
         } else {
-            echo 'erreur';
+            require_once Chemins::VUES . 'v_erreur404.inc.php';
         }
     }
 
