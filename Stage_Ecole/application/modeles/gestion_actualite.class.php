@@ -130,9 +130,7 @@ class GestionActualite {
         }
     }
 
-    private static function getConnexion() {
-        // Retourner la connexion PDO ici
-    }
+    
 }
 
 // </editor-fold>   

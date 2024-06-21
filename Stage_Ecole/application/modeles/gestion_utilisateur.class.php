@@ -10,15 +10,17 @@ class GestionUtilisateur {
         return GestionBoutique::getNbTupleByTable('actualite');
     }
 
-    public static function ajouter($Titre, $descriptionActualite, $dates, $image, $privacy) {
+    public static function ajouter($Nom, $Prenom, $mdp, $mail, $login,$admin,$superAdmin) {
         GestionBoutique::seConnecter();
-        GestionBoutique::$requete = "insert into actualite(Titre,description,dates,image,privacy) values(:Titre ,:description, :dates,:image, :privacy) ";
+        GestionBoutique::$requete = "insert into utilisateur(Nom,Prenom,mdp,Mail,login,isAdmin,SuperAdmin) values(:Nom ,:Prenom, :mdp,:Mail, :login,:isAdmin,:SuperAdmin) ";
         GestionBoutique::$pdoStResults = GestionBoutique::$pdoCnxBase->prepare(GestionBoutique::$requete);
-        GestionBoutique::$pdoStResults->bindValue('Titre', $Titre);
-        GestionBoutique::$pdoStResults->bindValue('description', $descriptionActualite);
-        GestionBoutique::$pdoStResults->bindValue('dates', $dates);
-        GestionBoutique::$pdoStResults->bindValue('image', $image);
-        GestionBoutique::$pdoStResults->bindValue('privacy', $privacy);
+        GestionBoutique::$pdoStResults->bindValue('Nom', $Nom);
+        GestionBoutique::$pdoStResults->bindValue('Prenom', $Prenom);
+        GestionBoutique::$pdoStResults->bindValue('mdp', sha1($mdp));
+        GestionBoutique::$pdoStResults->bindValue('Mail', $mail);
+        GestionBoutique::$pdoStResults->bindValue('login', $login);
+        GestionBoutique::$pdoStResults->bindValue('isAdmin', $admin);
+        GestionBoutique::$pdoStResults->bindValue('SuperAdmin', $superAdmin);
         GestionBoutique::$pdoStResults->execute();
     }
 
@@ -44,7 +46,7 @@ class GestionUtilisateur {
 
     public static function getIdUtilisateur($login) {
         GestionBoutique::seConnecter();
-        GestionBoutique::$requete = "Select idUtilisateur FROM utilisateur WHERE Mail = :login";
+        GestionBoutique::$requete = "Select idUtilisateur FROM utilisateur WHERE login = :login";
         GestionBoutique::$pdoStResults = GestionBoutique::$pdoCnxBase->prepare(GestionBoutique::$requete);
         GestionBoutique::$pdoStResults->bindValue('login', $login);
         GestionBoutique::$pdoStResults->execute();
