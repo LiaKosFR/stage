@@ -44,7 +44,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.php?controleur=utilisateur&action=seDeconnecter">Se Déconnecter</a>
+                                    <a class="nav-link" href="index.php?controleur=Utilisateur&action=seDeconnecter">Se Déconnecter</a>
                                 </li>
 
                             </ul>
