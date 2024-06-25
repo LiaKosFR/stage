@@ -1,6 +1,7 @@
 .admin{
     color: #CAC0B3;
 }
+
 .titre{
     width: 1000px;
     font-size: 25pt;    
@@ -8,6 +9,13 @@
     padding-bottom: 25px;
 }
 .indexAdmin{
+    margin-top: 50px;
+    height: auto;
+    width: auto;
+    display: grid;
+    place-items: center;
+}
+.indexSuperAdmin{
     margin-top: 50px;
     height: auto;
     width: auto;

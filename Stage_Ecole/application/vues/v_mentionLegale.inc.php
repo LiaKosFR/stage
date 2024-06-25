@@ -64,7 +64,7 @@
 
             <h2>Propriété intellectuelle</h2>
             <p>
-                Le contenu de ce site (textes, images, graphismes, logo, etc.) est la propriété exclusive de l'Ecole Jamondeyra, sauf mention contraire. Toute reproduction, distribution, modification, adaptation, retransmission ou publication de ces différents éléments est strictement interdite sans l'accord exprès par écrit de l'Ecole Jamondeyra.
+                Le contenu de ce site (textes, images, graphismes, logo, etc.) est la propriété exclusive de l'Ecole Jamondeyra, sauf mention contraire. Toute reproduction, distribution, modification, adaptation, retransmission ou publication de ces différents éléments est strictement interdit sans l'accord exprès par écrit de l'Ecole Jamondeyra.
             </p>
 
             <h2>Protection des données personnelles</h2>
@@ -84,7 +84,7 @@
 
             <h2>Crédits</h2>
             <p>
-                Conception et réalisation : Noro Loïc, Tannou Rewann, stagiaire au lycée Marc-Bloch de Sérignan<br>
+                Conception et réalisation : Noro Loïc, Tannou Rewann, stagiaires au lycée Marc-Bloch de Sérignan<br>
             </p>
             <button class="btn-back" onclick="window.history.back();">Retour</button>
         </div>

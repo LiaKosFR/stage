@@ -11,7 +11,9 @@ public function ajouterUtilisateur(){
     $isAdmin = $_POST['isAdmin'];
     $SuperAdmin = $_POST['SuperAdmin'];
     GestionUtilisateur::ajouter($nom, $prenom, $mdp, $email, $login, $isAdmin, $SuperAdmin);
+    require Chemins::VUES_ADMIN . 'v_index_super_admin.inc.php';
 }
+
 public function seDeconnecter() {
         setcookie('login', ''); //suppression du cookie en vidant simplement la chaîne
         $_SESSION = array();

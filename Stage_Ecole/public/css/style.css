@@ -8,6 +8,11 @@ body {
 
 
 
+
+
+
+
+
 .btn {
     display: none; /* Masqué par défaut */
     position: fixed; /* Fixé en bas à droite de la page */
@@ -777,5 +782,43 @@ footer {
 }
 
 /* end Article section*/
+/* start photo section*/
+/* Styles de la galerie lightbox */
+.lightbox-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
 
+.lightbox-gallery a {
+  flex: 1 0 21%; /* Trois images par ligne sur les grands écrans */
+  max-width: 500px; /* Limite la largeur des images */
+  box-sizing: border-box;
+  transition: transform 0.3s;
+  text-decoration: none;
+}
+
+.lightbox-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lightbox-gallery a:hover {
+  transform: scale(1.05);
+}
+
+.lightbox-gallery a:focus {
+  outline: 2px solid #00f;
+  transform: scale(1.05);
+}
+.titreGalerie{
+    text-align: center;
+    margin: 1%;
+    
+}
+/* end photo section*/
 

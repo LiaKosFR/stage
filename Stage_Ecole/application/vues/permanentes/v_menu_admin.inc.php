@@ -38,6 +38,12 @@
                                     <a class="nav-link" href="index.php#Services"> Services </a>
 
                                 </li>
+                                
+                                <li class="nav-item">
+
+                                    <a class="nav-link" href="index.php?controleur=Photo&action=afficherPhoto"> Galerie </a>
+
+                                </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.php#ContactNow">Nous Contacter</a>

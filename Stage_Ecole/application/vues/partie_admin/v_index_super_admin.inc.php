@@ -1,5 +1,5 @@
 
-<section class="indexAdmin">
+<section class="indexSuperAdmin">
     <div class="titre">
         Administration du site (Accès réservé)</br>
         - Bonjour <?php echo $_SESSION['login_super_admin']; ?> -
@@ -41,8 +41,83 @@
 
             <input class="bouton_form" type="submit" value="Ajouter">
         </form>
-        
+         
+          <form id="selectUtilisateurForm" method="GET" action="index.php">
+            <input type="hidden" name="controleur" value="Utilisateur">
+            <input type="hidden" name="action" value="afficherModifierUtilisateur">
+            <label for="utilisateur_a_modifier">Modifier l'utilisateur :</label>
+            <select id="utilisateur_a_modifier" name="idUtilisateur" required>
+                <option value="">Sélectionner l'utilisateur</option>
+                <?php
+                $lesUtilisateurs = GestionBoutique::getLesTuplesByTable("utilisateur");
+                foreach ($lesUtilisateurs as $unUtilisateur) {
+                    echo '<option value="' . $unUtilisateur->idUtilisateur . '">' . $unUtilisateur->Nom . '</option>';
+                }
+                ?>
+            </select>
+        </form>
+
+        <script>
+            document.getElementById('utilisateur_a_modifier').addEventListener('change', function () {
+                document.getElementById('selectActualiteForm').submit();
+            });
+        </script>
+
+
+
+<!--        <script>
+            $(document).ready(function () {
+                $('#actualite_a_modifier').change(function () {
+                    var idActualite = $(this).val();
+                    console.log("Actualité sélectionnée: " + idActualite); // Debug
+                    if (idActualite) {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'index.php?controleur=Actualite&action=getActualiteDetails',
+                            data: {idActualite: idActualite},
+                            dataType: 'json',
+                            success: function (response) {
+                                console.log("Réponse du serveur: ", response); // Debug
+                                if (response) {
+                                    $('#nouveau_nom_actualite').val(response.Titre);
+                                    $('#descrption_actualite').val(response.description);
+                                    $('#Privacy_actualite').val(response.privacy);
+                                }
+                            },
+                            error: function (xhr, status, error) {
+                                console.error("Erreur lors de la récupération des détails de l'actualité:", error); // Debug
+                                alert('Erreur lors de la récupération des détails de l\'actualité.');
+                            }
+                        });
+                    } else {
+                        $('#nouveau_nom_actualite').val('');
+                        $('#descrption_actualite').val('');
+                        $('#Privacy_actualite').val('');
+                    }
+                });
+            });
+        </script>-->
+
+        <form  class="formSuppActualite"action="index.php?controleur=Actualite&action=SupprimerActualite" method="POST">
+            <label for="actualite_a_supprimer">Supprimer une actualite</label>
+           <select id="utilisateur_a_modifier" name="idUtilisateur" required>
+                <option value="">Sélectionner l'utilisateur</option>
+                <?php
+                $lesUtilisateurs = GestionBoutique::getLesTuplesByTable("utilisateur");
+                foreach ($lesUtilisateurs as $unUtilisateur) {
+                    echo '<option value="' . $unUtilisateur->idUtilisateur . '">' . $unUtilisateur->Nom . '</option>';
+                }
+                ?>
+            </select>
+
+            <input class ="bouton_form" type="submit" value="Supprimer">
+        </form>
     </div>
+    
+    </div>
+    
+    
+    
     
     
     

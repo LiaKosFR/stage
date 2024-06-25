@@ -165,3 +165,20 @@
     }
 
 }
+/* Responsive pour plus de flexibilité */
+@media (min-width: 769px){
+    .lightbox-gallery a {
+    flex: 1 0 30%; /* Trois images par ligne sur ordinateur */
+  }
+}
+@media (max-width: 768px) {
+  .lightbox-gallery a {
+    flex: 1 0 30%; /* Trois images par ligne sur tablette */
+  }
+}
+
+@media (max-width: 480px) {
+  .lightbox-gallery a {
+    flex: 1 0 45%; /* Deux images par ligne sur mobile */
+  }
+}
