@@ -4,7 +4,7 @@
 
 .titre{
     width: 1000px;
-    font-size: 25pt;    
+    font-size: 25pt;
     margin-left: 300px;
     padding-bottom: 25px;
 }
@@ -34,12 +34,12 @@
     margin-top:5px;
     margin-left: 550px;
     padding-bottom:  10px;
-    
+
 }
 .sectionConnexionAdmin{
     margin-top: 50px;
     display: flex;
-    
+
 }
 
 
@@ -125,16 +125,22 @@ form {
     border-radius: 30px;
 }
 
-.produit{
-    border: 1px solid rgba(60,192,217, 0.5) ;
-    box-shadow: 5px 5px 5px 1px rgba(60	,192,217, 0.5);
+
+.produit {
+    border: 1px solid rgba(60, 192, 217, 0.5);
+    box-shadow: 5px 5px 5px 1px rgba(60, 192, 217, 0.5);
+    background: rgb(60, 192, 217);
     border-radius: 30px;
     padding: 10px;
-    padding-left: 10px;
     margin-top: 20px;
-    height: 500px;
-    
-     
+    height: auto;
+    width: 50%;
+    margin-left: 0; /* Réinitialiser la marge gauche pour centrer correctement */
+    display: flex;
+    flex-direction: column; /* Aligner les div en colonne */
+    align-items: center; /* Centrer les div horizontalement */
+    justify-content: center; /* Centrer les div verticalement */
+
 }
 .produit h2{
     text-align: center;
@@ -142,9 +148,26 @@ form {
     text-decoration:underline;
 }
 .formModifierActualite .bouton_form{
-   margin-top: 10px;
-   margin-left: 350px;
+    margin-top: 10px;
+    margin-left: 350px;
 }
+.utilisateur{
+    border: 1px solid rgba(60, 192, 217, 0.5);
+    box-shadow: 5px 5px 5px 1px rgba(60, 192, 217, 0.5);
+    background: rgb(60, 192, 217);
+    border-radius: 30px;
+    padding: 10px;
+    margin-top: 20px;
+    height: auto;
+    width: 50%;
+    margin-left: 0; /* Réinitialiser la marge gauche pour centrer correctement */
+    display: flex;
+    flex-direction: column; /* Aligner les div en colonne */
+    align-items: center; /* Centrer les div horizontalement */
+    justify-content: center; /* Centrer les div verticalement */
+
+}
+
 
 
 

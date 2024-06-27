@@ -176,12 +176,17 @@
     <h2>Ecole Jamondeyra</h2>
     <div class="social-media">
         <h2>Réseaux Sociaux</h2>
-        <a href="https://www.facebook.com/people/Ecole-Jamondeyra/100063759752377/" target="_blank">
-            <img src="<?php echo Chemins::IMAGES . 'facebook-icon.png' ?>" alt="Facebook" width="30" height="30">
-        </a>
+        <div class="social-media-icons">
+            <a href="https://www.facebook.com/people/Ecole-Jamondeyra/100063759752377/" target="_blank">
+                <img src="<?php echo Chemins::IMAGES . 'facebook-icon.png' ?>" alt="Facebook" width="30" height="30">
+            </a>
+            <a href="https://www.instagram.com/ecole_jamondeyra_bilingue/" target="_blank">
+                <img src="<?php echo Chemins::IMAGES . 'instagram-icon.png' ?>" alt="Instagram" width="30" height="30">
+            </a>
+        </div>
     </div>
     <div class="legal-mentions">
-        <p><a href="<?php echo Chemins::VUES . 'v_mentionLegale.inc.php'?>">Mentions Légales</a></p>
+        <p><a href="<?php echo Chemins::VUES . 'v_mentionLegale.inc.php' ?>">Mentions Légales</a></p>
     </div>
 </footer>
 

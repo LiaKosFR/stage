@@ -24,23 +24,26 @@ class GestionUtilisateur {
         GestionBoutique::$pdoStResults->execute();
     }
 
-    public static function supprimerById($idActualite) {
+    public static function supprimerById($idUtilisateur) {
         GestionBoutique::seConnecter();
-        GestionBoutique::$requete = "Delete FROM actualite WHERE idActualite = :id ";
+        GestionBoutique::$requete = "Delete FROM utilisateur WHERE idUtilisateur = :id ";
         GestionBoutique::$pdoStResults = GestionBoutique::$pdoCnxBase->prepare(GestionBoutique::$requete);
-        GestionBoutique::$pdoStResults->bindValue('id', $idActualite);
+        GestionBoutique::$pdoStResults->bindValue('id', $idUtilisateur);
         GestionBoutique::$pdoStResults->execute();
     }
 
-    public static function modifierActualite($idProduitAChanger, $Titre, $descriptionActualite, $dates, $idUtilisateur) {
+    public static function modifierUtilisateur($idUtilisateurAChanger, $Nom, $Prenom, $mdp, $Mail,$login,$admin,$superAdmin) {
         GestionBoutique::seConnecter();
-        GestionBoutique::$requete = "update actualite set Titre = :Titre , description = :description , dates = :dates , idUtilisateur = :idUtilisateur WHERE id = :id";
+        GestionBoutique::$requete = "update utilisateur set Nom = :Nom , Prenom = :Prenom , mdp = :mdp , Mail = :Mail,login = :login, isAdmin = :idAdmin, SuperAdmin = :SuperAdmin WHERE idUtilisateur = :id";
         GestionBoutique::$pdoStResults = GestionBoutique::$pdoCnxBase->prepare(GestionBoutique::$requete);
-        GestionBoutique::$pdoStResults->bindValue('id', $idActualiteAChanger);
-        GestionBoutique::$pdoStResults->bindValue('Titre', $nomProduit);
-        GestionBoutique::$pdoStResults->bindValue('description', $descriptionActualite);
-        GestionBoutique::$pdoStResults->bindValue('dates', $dates);
-        GestionBoutique::$pdoStResults->bindValue('idUtilisateur', $idUtilisateur);
+        GestionBoutique::$pdoStResults->bindValue('id', $idUtilisateurAChanger);
+        GestionBoutique::$pdoStResults->bindValue('Nom', $Nom);
+        GestionBoutique::$pdoStResults->bindValue('Prenom', $Prenom);
+        GestionBoutique::$pdoStResults->bindValue('mdp', $mdp);
+        GestionBoutique::$pdoStResults->bindValue('Mail', $Mail);
+        GestionBoutique::$pdoStResults->bindValue('login', $login);
+        GestionBoutique::$pdoStResults->bindValue('isAdmin', $admin);
+        GestionBoutique::$pdoStResults->bindValue('SuperAdmin', $superAdmin);
         GestionBoutique::$pdoStResults->execute();
     }
 
@@ -51,6 +54,19 @@ class GestionUtilisateur {
         GestionBoutique::$pdoStResults->bindValue('login', $login);
         GestionBoutique::$pdoStResults->execute();
         
+    }
+    public static function getUtilisateurById($idUtilisateur) {
+        $pdo = GestionBoutique::seConnecter();
+        if ($pdo) {
+            $sql = "SELECT Nom, Prenom, Mail,isAdmin,SuperAdmin FROM utilisateur WHERE idUtilisateur = :idUtilisateur";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } else {
+            echo 'Erreur : Impossible de se connecter à la base de données.';
+            return false;
+        }
     }
 
 // </editor-fold>   

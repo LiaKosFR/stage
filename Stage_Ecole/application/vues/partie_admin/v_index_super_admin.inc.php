@@ -98,9 +98,9 @@
             });
         </script>-->
 
-        <form  class="formSuppActualite"action="index.php?controleur=Actualite&action=SupprimerActualite" method="POST">
-            <label for="actualite_a_supprimer">Supprimer une actualite</label>
-           <select id="utilisateur_a_modifier" name="idUtilisateur" required>
+        <form  class="formSuppUtilisateur"action="index.php?controleur=Utilisateur&action=SuprimerUtilisateur" method="POST">
+            <label for="utilisateur_a_supprimer">Supprimer une actualite</label>
+           <select id="utilisateur_a_supprimer" name="idUtilisateur" required>
                 <option value="">Sélectionner l'utilisateur</option>
                 <?php
                 $lesUtilisateurs = GestionBoutique::getLesTuplesByTable("utilisateur");

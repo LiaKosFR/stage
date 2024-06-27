@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Ecole Test</title>
+  <title>Ecole Jamondeyra</title>
 
   <!-- image barre de titre -->
   <link rel="shortcut icon" href="<?php echo Chemins::IMAGES . 'logo_ecole.jpg';?>" />  
